@@ -43,12 +43,12 @@ def trainCNN( ):
     test_datagen = ImageDataGenerator(rescale=1.0/255.)
 
     train_generator = train_datagen.flow_from_directory(train_dir,
-                                                        batch_size=32,
+                                                        batch_size=48,
                                                         class_mode='binary',
                                                         color_mode='grayscale',
                                                         target_size=(640, 360))
     validation_generator = test_datagen.flow_from_directory(validation_dir,
-                                                            batch_size=32,
+                                                            batch_size=48,
                                                             class_mode='binary',
                                                             color_mode='grayscale',
                                                             target_size=(640, 360))
@@ -65,21 +65,29 @@ def trainCNN( ):
         MaxPooling2D(2, 2),
         Dropout(0.2),
         Conv2D(12, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
+        #MaxPooling2D(2, 2),
         #Dropout(0.2), # No dropout in transitions
-        Conv2D(8, (2, 2), activation='relu'),
+        Conv2D(12, (2, 2), activation='relu'),
         MaxPooling2D(2, 2),
         Dropout(0.2),
         Conv2D(8, (2, 2), activation='relu'),
         MaxPooling2D(2, 2),
         Dropout(0.2),
         Conv2D(8, (2, 2), activation='relu'),
+        Dropout(0.2),
+        Conv2D(8, (2, 2), activation='relu'),
+        Dropout(0.2),
+        Conv2D(4, (2, 2), activation='relu'),
+        Dropout(0.2),
+        Conv2D(4, (2, 2), activation='relu'),
+        Dropout(0.2),
+        Conv2D(4, (2, 2), activation='relu'),
         MaxPooling2D(2, 2),
         #Dropout(0.2), # No dropout in transitions
         Flatten(),
-        #Dense(288, activation='relu'),
-        Dense(32, activation='relu'),
-        Dense(8, activation='relu'),
+        Dense(48, activation='relu'),
+        Dense(24, activation='relu'),
+        Dense(12, activation='relu'),
         Dense(1, activation='sigmoid')])
 
     print(model.summary())
@@ -88,14 +96,14 @@ def trainCNN( ):
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
-    #39.480 -> Training
-    #9.872 -> Validation
+    #39.480 -> Training 39480 = 2 x 2 x 2 × 3 × 5 × 7 × 47
+    #9.872 -> Validation = 2 x 2 x 2 x 2 × 617
 
     history = model.fit(train_generator,
                         validation_data=validation_generator,
-                        steps_per_epoch=1233, #1233
+                        steps_per_epoch=822,
                         epochs=10, #Later train with more epochs if neccessary
-                        validation_steps=308, #308
+                        validation_steps=205,
                         verbose=1)
 
     acc      = history.history['accuracy']
