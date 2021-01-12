@@ -43,55 +43,33 @@ def trainCNN( ):
     test_datagen = ImageDataGenerator(rescale=1.0/255.)
 
     train_generator = train_datagen.flow_from_directory(train_dir,
-                                                        batch_size=48,
+                                                        batch_size=16,
                                                         class_mode='binary',
                                                         color_mode='grayscale',
-                                                        target_size=(640, 360))
+                                                        target_size=(480, 480)) # 640x360 = 480x480. (640, 360)
     validation_generator = test_datagen.flow_from_directory(validation_dir,
-                                                            batch_size=48,
+                                                            batch_size=16,
                                                             class_mode='binary',
                                                             color_mode='grayscale',
-                                                            target_size=(640, 360))
+                                                            target_size=(480, 480))
 
 
     model = tf.keras.models.Sequential([
-        Conv2D(16, (2,2), activation='relu', input_shape=(640, 360, 1)),
-        MaxPooling2D(2,2),
-        Dropout(0.2),
-        Conv2D(16, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
-        #Dropout(0.2), # No dropout in transitions
+        Conv2D(32, (2, 2), activation='relu', input_shape=(480, 480, 1)), MaxPooling2D(2,2), #Dropout(0.2),
+        Conv2D(16, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
+        Conv2D(16, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
+        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
+        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
+        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
         Conv2D(12, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
-        Dropout(0.2),
-        Conv2D(12, (2, 2), activation='relu'),
-        #MaxPooling2D(2, 2),
-        #Dropout(0.2), # No dropout in transitions
-        Conv2D(12, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
-        Dropout(0.2),
-        Conv2D(8, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
-        Dropout(0.2),
-        Conv2D(8, (2, 2), activation='relu'),
-        Dropout(0.2),
-        Conv2D(8, (2, 2), activation='relu'),
-        Dropout(0.2),
-        Conv2D(4, (2, 2), activation='relu'),
-        Dropout(0.2),
-        Conv2D(4, (2, 2), activation='relu'),
-        Dropout(0.2),
-        Conv2D(4, (2, 2), activation='relu'),
-        MaxPooling2D(2, 2),
-        #Dropout(0.2), # No dropout in transitions
         Flatten(),
-        Dense(48, activation='relu'),
-        Dense(24, activation='relu'),
-        Dense(12, activation='relu'),
-        Dense(1, activation='sigmoid')])
+        Dense(300, activation='relu'),
+        Dense(10, activation='relu'),
+        Dense(1, activation='sigmoid')
+    ])
 
     print(model.summary())
-    optimizer = Adam(learning_rate=3e-3)
+    optimizer = Adam(learning_rate=5e-3) #3e-3
     model.compile(optimizer=optimizer,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
@@ -101,9 +79,9 @@ def trainCNN( ):
 
     history = model.fit(train_generator,
                         validation_data=validation_generator,
-                        steps_per_epoch=822,
+                        steps_per_epoch=2466,
                         epochs=10, #Later train with more epochs if neccessary
-                        validation_steps=205,
+                        validation_steps=616,
                         verbose=1)
 
     acc      = history.history['accuracy']
