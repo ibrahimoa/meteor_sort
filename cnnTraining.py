@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.callbacks import LearningRateScheduler
-from tensorflow.keras.layers import Dense,  Conv2D, MaxPooling2D, Dropout, Flatten
+from tensorflow.keras.layers import Dense,  Conv2D, MaxPooling2D, Dropout, Flatten, GlobalAveragePooling2D
 from tensorflow.keras.optimizers import Adam, SGD, RMSprop
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
@@ -55,21 +55,22 @@ def trainCNN( ):
 
 
     model = tf.keras.models.Sequential([
-        Conv2D(32, (2, 2), activation='relu', input_shape=(480, 480, 1)), MaxPooling2D(2,2), #Dropout(0.2),
-        Conv2D(16, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
-        Conv2D(16, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
-        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
-        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
-        Conv2D(12, (2, 2), activation='relu'), MaxPooling2D(2, 2), #Dropout(0.2),
-        Conv2D(12, (2, 2), activation='relu'),
+        Conv2D(32, (3, 3), activation='relu', input_shape=(480, 480, 1)), MaxPooling2D(2,2), #Dropout(0.05),
+        Conv2D(16, (3, 3), activation='relu', kernel_initializer='he_uniform'), MaxPooling2D(2, 2), #Dropout(0.05),
+        Conv2D(16, (3, 3), activation='relu', kernel_initializer='he_uniform'), MaxPooling2D(2, 2), #Dropout(0.05),
+        Conv2D(12, (2, 2), activation='relu', kernel_initializer='he_uniform'), MaxPooling2D(2, 2), #Dropout(0.05),
+        Conv2D(8,  (2, 2), activation='relu', kernel_initializer='he_uniform'), MaxPooling2D(2, 2), #Dropout(0.05),
+        Conv2D(4,  (2, 2), activation='relu', kernel_initializer='he_uniform'), MaxPooling2D(2, 2), #Dropout(0.05),
+        #Conv2D(4, (2, 2), activation='relu'),
         Flatten(),
-        Dense(300, activation='relu'),
-        Dense(10, activation='relu'),
-        Dense(1, activation='sigmoid')
+        Dense(144, activation='relu', kernel_initializer='he_uniform'),
+        #Dense(32, activation='relu', kernel_initializer='he_uniform'),
+        Dense(8, activation='relu', kernel_initializer='he_uniform'),
+        Dense(1, activation='sigmoid', kernel_initializer='he_uniform')
     ])
 
     print(model.summary())
-    optimizer = Adam(learning_rate=5e-3) #3e-3
+    optimizer = Adam(learning_rate=4e-3) #3e-3 # Try with more and less learning rate # 5e-3
     model.compile(optimizer=optimizer,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
@@ -79,9 +80,9 @@ def trainCNN( ):
 
     history = model.fit(train_generator,
                         validation_data=validation_generator,
-                        steps_per_epoch=2466,
-                        epochs=10, #Later train with more epochs if neccessary
-                        validation_steps=616,
+                        steps_per_epoch=2467, #2467
+                        epochs=50, #Later train with more epochs if neccessary
+                        validation_steps=617, #617
                         verbose=1)
 
     acc      = history.history['accuracy']
