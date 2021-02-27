@@ -1,0 +1,12 @@
+*********************************************
+confusion matrix: 
+true positives: 2821
+false positives: 337
+true negatives: 4423
+false negatives: 1347
+*********************************************
+
+Accuracy: 80.89%
+Precision: 89.33%
+Recall: 67.68%
+F1 score: 0.77

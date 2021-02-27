@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/compareTxtToFolders.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/createExtraDataSet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnnTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createTrainAndValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sortMeteorsAdditionalData.py" beforeDir="false" afterPath="$PROJECT_DIR$/sortMeteorsAdditionalData.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../meteor_classification\exportToHTML" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="meteor_classification" />
@@ -27,34 +35,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.cnnTraining">
-    <configuration name="cnnLearningRate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MeteorClassificationProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnnLearningRate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="cnnTraining" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,28 +65,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="cnn_advanced_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MeteorClassificationProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="G:/Personal/Cursos/DeepLearning.AI TensorFlow Developer Professional Certificate/Convolutional Neural Networks in TF - Completed/cnn_advanced" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="G:/Personal/Cursos/DeepLearning.AI TensorFlow Developer Professional Certificate/Convolutional Neural Networks in TF - Completed/cnn_advanced/cnn_advanced_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="evenData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="compareTxtToFolders" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,7 +77,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evenData.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compareTxtToFolders.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,7 +86,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="resizeData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="createExtraDataSet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -130,7 +98,49 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/resizeData.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createExtraDataSet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="predict_generator_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorClassificationProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/predict_generator_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="split_train_valid_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorClassificationProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/split_train_valid_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,10 +152,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.cnnTraining" />
-        <item itemvalue="Python.cnnLearningRate" />
-        <item itemvalue="Python.evenData" />
-        <item itemvalue="Python.resizeData" />
-        <item itemvalue="Python.cnn_advanced_1" />
+        <item itemvalue="Python.predict_generator_test" />
+        <item itemvalue="Python.split_train_valid_test" />
+        <item itemvalue="Python.createExtraDataSet" />
+        <item itemvalue="Python.compareTxtToFolders" />
       </list>
     </recent_temporary>
   </component>
@@ -167,40 +177,38 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="872" y="178" key="#Notifications/0.0.2560.1040@0.0.2560.1040" timestamp="1609665721373" />
+    <state x="92" y="92" width="2376" height="856" key="DiffContextDialog" timestamp="1614464538703">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="92" y="92" width="2376" height="856" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1614464538703" />
     <state x="987" y="275" key="FileChooserDialogImpl" timestamp="1609666661714">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605353461443" />
     <state x="987" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1609666661714" />
-    <state width="1284" height="880" key="GridCell.Tab.0.bottom" timestamp="1612604241103">
+    <state width="2539" height="881" key="GridCell.Tab.0.bottom" timestamp="1614464895599">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699014" />
-    <state width="1284" height="880" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1612604241103" />
-    <state width="1284" height="880" key="GridCell.Tab.0.center" timestamp="1612604241103">
+    <state width="2539" height="881" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
+    <state width="2539" height="881" key="GridCell.Tab.0.center" timestamp="1614464895599">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="1284" height="880" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1612604241103" />
-    <state width="1284" height="880" key="GridCell.Tab.0.left" timestamp="1612604241103">
+    <state width="2539" height="881" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
+    <state width="2539" height="881" key="GridCell.Tab.0.left" timestamp="1614464895599">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="1284" height="880" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1612604241103" />
-    <state width="1284" height="880" key="GridCell.Tab.0.right" timestamp="1612604241103">
+    <state width="2539" height="881" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
+    <state width="2539" height="881" key="GridCell.Tab.0.right" timestamp="1614464895599">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1899" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="1284" height="880" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1612604241103" />
-    <state x="217" y="170" key="SettingsEditor" timestamp="1609666726826">
+    <state width="2539" height="881" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
+    <state x="217" y="170" key="SettingsEditor" timestamp="1614417163730">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605376614160" />
-    <state x="217" y="170" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1609666726826" />
-    <state width="498" height="398" key="SwitcherDM" timestamp="1605036296964">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="498" height="398" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1605036296964" />
+    <state x="217" y="170" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1614417163730" />
     <state x="256" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609925166186">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
