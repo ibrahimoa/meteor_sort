@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/compareTxtToFolders.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createExtraDataSet.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/results_21_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/results_22_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/results_23_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/weights/Model21/performanceModel21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/weights/Model22/performanceModel22.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createTrainAndValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sortMeteorsAdditionalData.py" beforeDir="false" afterPath="$PROJECT_DIR$/sortMeteorsAdditionalData.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jj7Yx7WfdobhQAPTw90HXJF62q" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,6 +42,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -172,6 +177,9 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="872" y="178" key="#Notifications" timestamp="1609665721373">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -185,26 +193,22 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="987" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1609666661714" />
-    <state width="2539" height="881" key="GridCell.Tab.0.bottom" timestamp="1614464895599">
+    <state width="1167" height="912" key="GridCell.Tab.0.bottom" timestamp="1615309223888">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1899" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699014" />
-    <state width="2539" height="881" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
-    <state width="2539" height="881" key="GridCell.Tab.0.center" timestamp="1614464895599">
+    <state width="1167" height="912" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
+    <state width="1167" height="912" key="GridCell.Tab.0.center" timestamp="1615309223888">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1899" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="2539" height="881" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
-    <state width="2539" height="881" key="GridCell.Tab.0.left" timestamp="1614464895599">
+    <state width="1167" height="912" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
+    <state width="1167" height="912" key="GridCell.Tab.0.left" timestamp="1615309223888">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1899" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="2539" height="881" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
-    <state width="2539" height="881" key="GridCell.Tab.0.right" timestamp="1614464895599">
+    <state width="1167" height="912" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
+    <state width="1167" height="912" key="GridCell.Tab.0.right" timestamp="1615309223888">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1899" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605820699013" />
-    <state width="2539" height="881" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1614464895599" />
+    <state width="1167" height="912" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
     <state x="217" y="170" key="SettingsEditor" timestamp="1614417163730">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

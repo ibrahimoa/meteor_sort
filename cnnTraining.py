@@ -11,15 +11,16 @@ from os.path import join
 import multiprocessing
 from sklearn.metrics import confusion_matrix
 
-ImageResolution = (640, 360)
-ImageResolutionGrayScale = (640, 360, 1)
-
 def trainCNN( ):
 
     tf.keras.backend.clear_session()
 
+    ImageResolution = (480, 480)
+    ImageResolutionGrayScale = (480, 480, 1)
+    modelNumber = 'Model23'
+
     base_dir = 'C:\work_dir\meteorData\extraData'
-    results_dir_weights = 'G:\GIEyA\TFG\meteor_classification\\results\weights\model_19'
+    results_dir_weights = 'G:\GIEyA\TFG\meteor_classification\\results\weights\\' + modelNumber
 
     train_dir = join(base_dir, 'train')
     validation_dir = join(base_dir, 'validation')
@@ -39,6 +40,7 @@ def trainCNN( ):
                                        )
 
     validation_datagen = ImageDataGenerator(rescale=1.0/255.)
+
     test_datagen = ImageDataGenerator(rescale=1.0/255.0)
 
     train_generator = train_datagen.flow_from_directory(train_dir,
@@ -61,26 +63,31 @@ def trainCNN( ):
                                                       shuffle=False)
 
     model = tf.keras.models.Sequential([
-        Conv2D(16, (11, 11), activation='relu', input_shape=ImageResolutionGrayScale, strides=1),
+        Conv2D(16, (9, 9), activation='relu', input_shape=ImageResolutionGrayScale, strides=1),
         MaxPooling2D(pool_size=(3, 3)),
         Dropout(0.25),
 
-        Conv2D(12, (7, 7), activation='relu', kernel_initializer='he_uniform'),
-        #Conv2D(12, (3, 3), activation='relu', kernel_initializer='he_uniform'),
-        MaxPooling2D(pool_size=(2, 2)),
+        Conv2D(16, (1, 1), activation='relu', kernel_initializer='he_uniform'),
+        Conv2D(16, (7, 7), activation='relu', kernel_initializer='he_uniform'),
+        MaxPooling2D(pool_size=(3, 3)),
         Dropout(0.25),
 
+        Conv2D(12, (1, 1), activation='relu', kernel_initializer='he_uniform'),
         Conv2D(12, (5, 5), activation='relu', kernel_initializer='he_uniform'),
-        #Conv2D(16, (3, 3), activation='relu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(0.25),
 
+        Conv2D(12, (1, 1), activation='relu', kernel_initializer='he_uniform'),
         Conv2D(12, (3, 3), activation='relu', kernel_initializer='he_uniform'),
-        #Conv2D(8, (3, 3), activation='relu', kernel_initializer='he_uniform'),
+        MaxPooling2D(pool_size=(2, 2)),
+        Dropout(0.25),
+
+        Conv2D(24, (1, 1), activation='relu', kernel_initializer='he_uniform'),
+        Conv2D(24, (3, 3), activation='relu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
 
         Flatten(),
-        Dense(480, activation='relu', kernel_initializer='he_uniform'),
+        Dense(384, activation='relu', kernel_initializer='he_uniform'),
         Dropout(0.30),
         Dense(16, activation='relu', kernel_initializer='he_uniform'),
         Dropout(0.20),
@@ -92,36 +99,38 @@ def trainCNN( ):
     model.compile(optimizer=optimizer,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
-    #model.load_weights(join(results_dir_weights, 'model_acc_0.926.h5'))
+    model.load_weights(join(results_dir_weights, 'Model23_acc_0.9264_val_acc_0.8619.h5'))
 
     class SaveModelCallback(Callback):
-        def __init__(self, threshold):
+        def __init__(self, thresholdTrain, thresholdValid):
             super(SaveModelCallback, self).__init__()
-            self.threshold = threshold
+            self.thresholdTrain = thresholdTrain
+            self.thresholdValid = thresholdValid
 
         def on_epoch_end(self, epoch, logs=None):
-            if(logs.get('accuracy') >= self.threshold):
-                model.save_weights(join(results_dir_weights, 'model_19_acc_' +  str(logs.get('accuracy'))[0:6] + '_val_acc' + str(logs.get('val_accuracy'))[0:6] + '.h5'), save_format='h5')
+            if((logs.get('accuracy') >= self.thresholdTrain) and (logs.get('val_accuracy') >= self.thresholdValid)):
+                model.save_weights(join(results_dir_weights, modelNumber + '_acc_' +  str(logs.get('accuracy'))[0:6]
+                                        + '_val_acc_' + str(logs.get('val_accuracy'))[0:6] + '.h5'), save_format='h5')
 
-    callback92 = SaveModelCallback(0.920)
+    callback_90_85 = SaveModelCallback(0.900, 0.850)
 
-    #39.480 -> Training 39480 = 2 x 2 x 2 × 3 × 5 × 7 × 47
-    #9.872 -> Validation = 2 x 2 x 2 x 2 × 617
+    # Training -> 66947
+    # Validation -> 13388
+    # Test -> 8928
+
     history = model.fit(train_generator,
                         validation_data=validation_generator,
-                        steps_per_epoch=2467, #2467 #4934
-                        epochs=150, #Later train with more epochs if neccessary
-                        validation_steps=617, #617 #1234
+                        steps_per_epoch=4184, #4184
+                        epochs=25, #Later train with more epochs if neccessary
+                        validation_steps=836, #836
+                        shuffle=True,
                         verbose=1,
-                        callbacks=[callback92])
+                        callbacks=[callback_90_85])
 
-    acc      = history.history['accuracy']
-    val_acc  = history.history['val_accuracy']
-    loss     = history.history['loss']
-    val_loss = history.history['val_loss']
-    epochs = range(len(acc)) #Get number of epochs
+    #############################################################################################
+    #############################################################################################
 
-    prob_predicted = model.predict_generator(test_generator, steps=len(test_generator.filenames))
+    prob_predicted = model.predict(test_generator, steps=len(test_generator.filenames))
     test_labels = []
 
     for i in range(0, len(test_generator.filenames)):
@@ -143,15 +152,36 @@ def trainCNN( ):
         elif(test_labels[i] == 1.0):
             falseNegatives += 1
 
-    print('*********************************************')
-    print('confusion matrix: ')
-    print('true positives: {}'.format(truePositives))
-    print('false positives: {}'.format(falsePositives))
-    print('true negatives: {}'.format(trueNegatives))
-    print('false negatives: {}'.format(falseNegatives))
-    print('*********************************************')
+    performanceFile = open(join(results_dir_weights, 'performance' + modelNumber + '.txt'), 'w')
+    performanceFile.write('*********************************************\n')
+    performanceFile.write('confusion matrix: \n')
+    performanceFile.write('true positives: {}\n'.format(truePositives))
+    performanceFile.write('false positives: {}\n'.format(falsePositives))
+    performanceFile.write('true negatives: {}\n'.format(trueNegatives))
+    performanceFile.write('false negatives: {}\n'.format(falseNegatives))
+    performanceFile.write('*********************************************\n')
 
+    modelPrecision = (truePositives) / (truePositives + falsePositives)
+    modelRecall = (truePositives) / (truePositives + falseNegatives)
+    modelF1score = (2 * (modelPrecision * modelRecall)) / (modelPrecision + modelRecall)
 
+    performanceFile.write('*********************************************\n')
+    performanceFile.write('Performance metrics: \n')
+    performanceFile.write('Model Precision: {}\n'.format(modelPrecision))
+    performanceFile.write('Model Recall: {}\n'.format(modelRecall))
+    performanceFile.write('Model F1 Score: {}\n'.format(modelF1score))
+    performanceFile.write('*********************************************\n')
+
+    performanceFile.close()
+
+    #############################################################################################
+    #############################################################################################
+
+    acc      = history.history['accuracy']
+    val_acc  = history.history['val_accuracy']
+    loss     = history.history['loss']
+    val_loss = history.history['val_loss']
+    epochs = range(len(acc)) #Get number of epochs
 
     plt.plot(epochs, acc)
     plt.plot(epochs, val_acc)
