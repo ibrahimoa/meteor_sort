@@ -2,78 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_10_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_11_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_12_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_13_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_14_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_16_10_layers_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_17_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_18_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_18_output.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_19_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_1_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_20_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_21_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_22_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_23_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_2_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_3_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_4_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_5_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_6_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_7_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_8_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/code/results_9_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/weights/model_19/model_19_confusion_matrix.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/model_2_01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_35.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_45.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_50.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_02/model_2_02.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_02/performance_model_2_02.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_03/model_2_03_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_03/performance_model_2_03.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_04/performance_model_2_04.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_04/results_2_04_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_05/performance_model_2_05.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_05/results_2_05_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_06/performance_model_2_06.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_06/results_2_06_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_07/performance_model_2_07.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_07/results_2_08_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_08/performance_model_2_08.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_09/performance_model_2_09.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_09/results_2_09_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_35.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_40.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_45.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnnTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/model_19_confusion_matrix.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_10_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_11_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_12_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_13_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_14_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_16_10_layers_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_17_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_18_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_18_output.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_19_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_1_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_20_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_21_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_22_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_23_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_2_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_3_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_4_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_5_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_6_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_7_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_8_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/results_9_code.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/split_train_valid_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,17 +44,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_08" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_09" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_09" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_08" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_07" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_06" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_05" />
-      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_04" />
     </key>
   </component>
   <component name="RunManager" selected="Python.cnnTraining_2">

@@ -6,7 +6,7 @@ from tensorflow.keras.callbacks import Callback
 from os.path import join
 from os import listdir
 import multiprocessing
-from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss, getProblematicMeteors
+from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss
 
 def trainCNN( ):
 
@@ -106,27 +106,22 @@ def trainCNN( ):
 
     callback_84_84 = SaveModelCallback(0.840, 0.840)
 
-#    history = model.fit(train_generator,
-#                        validation_data=validation_generator,
-#                        steps_per_epoch=steps_per_epoch,
-#                        epochs=EPOCHS, #Later train with more epochs if neccessary
-#                        validation_steps=validation_steps,
-#                        shuffle=True,
-#                        verbose=1,
-#                        callbacks=[callback_84_84])
-
-    model.load_weights(join(results_dir_weights, 'model_2_09_acc_0.917_val_acc_0.882.h5'))
-    dataDir = 'C:\work_dir\meteorData\extra_data'
-    problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problematicData_35.txt')
-    getProblematicMeteors(model, dataDir, ImageResolution, problematicFile, margin=0.35)
+    history = model.fit(train_generator,
+                        validation_data=validation_generator,
+                        steps_per_epoch=steps_per_epoch,
+                        epochs=EPOCHS, #Later train with more epochs if neccessary
+                        validation_steps=validation_steps,
+                        shuffle=True,
+                        verbose=1,
+                        callbacks=[callback_84_84])
 
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
     # Get performance measures:
-    #getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
+    getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
 
     # Plot Accuracy and Loss in both train and validation sets
-    #plotAccuracyAndLoss(history)
+    plotAccuracyAndLoss(history)
 
     #########################################################################################################################
 

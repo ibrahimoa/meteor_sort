@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import matplotlib.pyplot as plt
 
-def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, threshold=0.5):
+def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, threshold=0.5) -> None:
     validation_datagen = ImageDataGenerator(rescale=1.0/255.)
 
     validation_generator = validation_datagen.flow_from_directory(dataDir,
@@ -23,10 +23,10 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     #############################################################################################
 
     # Get the confusion matrix:
-    truePositives = 0
-    trueNegatives = 0
-    falsePositives = 0
-    falseNegatives = 0
+    truePositives: int = 0
+    trueNegatives: int = 0
+    falsePositives: int = 0
+    falseNegatives: int = 0
 
     for i in range(len(prob_predicted)):
         if(prob_predicted[i] >= threshold and validation_labels[i] == 1.0):
@@ -73,7 +73,7 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     #############################################################################################
     return
 
-def plotAccuracyAndLoss(history):
+def plotAccuracyAndLoss(history) -> None:
 
     acc      = history.history['accuracy']
     val_acc  = history.history['val_accuracy']
@@ -94,5 +94,54 @@ def plotAccuracyAndLoss(history):
 
     return
 
+def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFile, margin=0.40) -> None:
+    datagen = ImageDataGenerator(rescale=1.0/255.)
 
+    generator = datagen.flow_from_directory(dataDir,
+                                          batch_size=1,
+                                          class_mode='binary',
+                                          color_mode='grayscale',
+                                          target_size=ImageResolution,
+                                          shuffle=False)
+    prob_predicted = model.predict(generator, steps=len(generator.filenames))
+    labels = []
+
+    for i in range(0, len(generator.filenames)):
+        labels.extend(np.array(generator[i][1]))
+
+    #############################################################################################
+
+    problematicPositives: int = 0
+    problematicNegatives: int = 0
+
+    with open(problematicMeteorsFile, 'w') as problematicFile:
+        for i in range(len(prob_predicted)):
+            if(prob_predicted[i] <= (0.5 - margin) and labels[i] == 1.0):
+                problematicFile.write('meteors_{}\n'.format(i))
+                problematicPositives += 1
+            elif(prob_predicted[i] >= (0.5 + margin) and labels[i] == 0.0):
+                problematicFile.write('non_meteors_{}\n'.format(i))
+                problematicNegatives += 1
+
+
+    print('\n\n\n\n*********************************************')
+    print('Margin: {}'.format(margin))
+    print('Problematic meteors: {}'.format(problematicPositives))
+    print('Problematic non-meteors: {}'.format(problematicNegatives))
+    print('*********************************************\n\n\n\n')
+
+    # Margin: 0.35
+    # Problematic meteors: 2410
+    # Problematic non-meteors: 969
+    
+    # Margin: 0.4
+    # Problematic meteors: 2016
+    # Problematic non-meteors: 650
+
+    # Margin: 0.45
+    # Problematic meteors: 1344
+    # Problematic non-meteors: 326
+
+    #############################################################################################
+    return
 
