@@ -22,7 +22,7 @@ def split_data(SOURCE, TRAINING, VALIDATION, TESTING, SPLIT_TRAIN, SPLIT_VALID, 
         return
     contentList = os.listdir(SOURCE)
     for i in range(len(contentList)):
-        if (os.path.getsize(os.path.join(SOURCE, contentList[i])) == 0):
+        if os.path.getsize(os.path.join(SOURCE, contentList[i])) == 0:
             contentList.pop(i)
     random.sample(contentList, len(contentList))
     for i in range(int(SPLIT_TRAIN * len(contentList))):
@@ -41,17 +41,17 @@ def split_data(SOURCE, TRAINING, VALIDATION, TESTING, SPLIT_TRAIN, SPLIT_VALID, 
         except:
             pass
 
-METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData\meteors"
-NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData\\non_meteors"
+METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData_75_15_10\meteors"
+NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData_75_15_10\\non_meteors"
 
-TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData\\train\meteors"
-VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData\\validation\meteors"
-TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData\\test\meteors'
+TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\train\meteors"
+VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\validation\meteors"
+TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData_70_30\\test\meteors'
 
-TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData\\train\\non_meteors"
-VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData\\validation\\non_meteors"
-TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData\\test\\non_meteors'
+TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\train\\non_meteors"
+VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\validation\\non_meteors"
+TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData_70_30\\test\\non_meteors'
 
 if __name__ == "__main__":
-    #split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.75, 0.20, 0.10)
-    split_data(NON_METEORS_SOURCE_DIR, TRAIN_NON_METEORS_DIR, VALIDATION_NON_METEORS_DIR, TEST_NON_METEORS_DIR, 0.75, 0.15, 0.10)
+    split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.70, 0.30, 0.00)
+    split_data(NON_METEORS_SOURCE_DIR, TRAIN_NON_METEORS_DIR, VALIDATION_NON_METEORS_DIR, TEST_NON_METEORS_DIR, 0.70, 0.30, 0.00)

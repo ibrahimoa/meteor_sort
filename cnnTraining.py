@@ -19,7 +19,7 @@ def trainCNN( ):
     ImageResolutionGrayScale = (480, 480, 1)
     modelNumber = 'Model23'
 
-    base_dir = 'C:\work_dir\meteorData\extraData'
+    base_dir = 'C:\work_dir\meteorData\extraData_75_15_10'
     results_dir_weights = 'G:\GIEyA\TFG\meteor_classification\\results\weights\\' + modelNumber
 
     train_dir = join(base_dir, 'train')

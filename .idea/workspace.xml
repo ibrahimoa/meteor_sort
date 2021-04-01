@@ -2,13 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/results/results_21_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/results_22_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/results_23_code.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/weights/Model21/performanceModel21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/weights/Model22/performanceModel22.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_10_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_11_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_12_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_13_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_14_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_16_10_layers_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_17_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_18_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_18_output.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_19_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_1_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_20_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_21_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_22_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_23_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_2_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_3_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_4_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_5_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_6_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_7_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_8_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/code/results_9_code.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/weights/model_19/model_19_confusion_matrix.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/model_2_01.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_35.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_40.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_45.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_01/performance_model_2_01_threshold_50.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_02/model_2_02.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_02/performance_model_2_02.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_03/model_2_03_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_03/performance_model_2_03.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_04/performance_model_2_04.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_04/results_2_04_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_05/performance_model_2_05.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_05/results_2_05_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_06/performance_model_2_06.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_06/results_2_06_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_07/performance_model_2_07.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_07/results_2_08_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_08/performance_model_2_08.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/model_19_confusion_matrix.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_10_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_11_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_12_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_13_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_14_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_16_10_layers_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_17_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_18_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_18_output.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_19_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_1_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_20_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_21_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_22_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_23_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_2_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_3_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_4_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_5_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_6_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_7_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_8_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_9_code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/split_train_valid_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,18 +102,26 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_08" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
-  <component name="RunManager" selected="Python.cnnTraining">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_08" />
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_07" />
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_06" />
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_05" />
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_04" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.cnnTraining_2">
     <configuration name="cnnTraining" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="compareTxtToFolders" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="cnnTraining_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +155,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/compareTxtToFolders.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnnTraining_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +164,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="createExtraDataSet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="performanceMeasure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -103,7 +176,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createExtraDataSet.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/performanceMeasure.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,14 +229,15 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.cnnTraining_2" />
+        <item itemvalue="Python.performanceMeasure" />
+        <item itemvalue="Python.split_train_valid_test" />
         <item itemvalue="Python.cnnTraining" />
         <item itemvalue="Python.predict_generator_test" />
-        <item itemvalue="Python.split_train_valid_test" />
-        <item itemvalue="Python.createExtraDataSet" />
-        <item itemvalue="Python.compareTxtToFolders" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -179,47 +253,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="872" y="178" key="#Notifications" timestamp="1609665721373">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="872" y="178" key="#Notifications/0.0.2560.1040@0.0.2560.1040" timestamp="1609665721373" />
-    <state x="92" y="92" width="2376" height="856" key="DiffContextDialog" timestamp="1614464538703">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="92" y="92" width="2376" height="856" key="DiffContextDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1614464538703" />
-    <state x="987" y="275" key="FileChooserDialogImpl" timestamp="1609666661714">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="987" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1609666661714" />
-    <state width="1167" height="912" key="GridCell.Tab.0.bottom" timestamp="1615309223888">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="1167" height="912" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
-    <state width="1167" height="912" key="GridCell.Tab.0.center" timestamp="1615309223888">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="1167" height="912" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
-    <state width="1167" height="912" key="GridCell.Tab.0.left" timestamp="1615309223888">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="1167" height="912" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
-    <state width="1167" height="912" key="GridCell.Tab.0.right" timestamp="1615309223888">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state width="1167" height="912" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1615309223888" />
-    <state x="217" y="170" key="SettingsEditor" timestamp="1614417163730">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="217" y="170" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1614417163730" />
-    <state x="256" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1609925166186">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="256" y="212" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1609925166186" />
-    <state x="1089" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609666790404">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1089" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1609666790404" />
   </component>
 </project>
