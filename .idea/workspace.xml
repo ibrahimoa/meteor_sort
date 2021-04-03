@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/filter_missclassified_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_10/performance_model_2_10.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_10/results_2_10_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/problematicData_30.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/problematicData_48.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_40_1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compareTxtToFolders.py" beforeDir="false" afterPath="$PROJECT_DIR$/compareTxtToFolders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/split_train_valid_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +40,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_11" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_11" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_10" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_09" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_08" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_07" />
-      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_06" />
     </key>
   </component>
   <component name="RunManager" selected="Python.cnnTraining_2">

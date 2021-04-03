@@ -127,27 +127,27 @@ def trainCNN( ):
     #                        'model_2_02_acc_0.9049_val_acc_0.8934.h5'))
     callback_89_89 = SaveModelCallback(0.890, 0.890)
 
-#     history = model.fit(train_generator,
-    #                         validation_data=validation_generator,
-    #                         steps_per_epoch=steps_per_epoch,
-    #                         epochs=EPOCHS, #Later train with more epochs if neccessary
-    #                         validation_steps=validation_steps,
-    #                         shuffle=True,
-    #                         verbose=1,
-    #                         callbacks=[callback_89_89])
+    history = model.fit(train_generator,
+                        validation_data=validation_generator,
+                        steps_per_epoch=steps_per_epoch,
+                        epochs=EPOCHS, #Later train with more epochs if neccessary
+                        validation_steps=validation_steps,
+                        shuffle=True,
+                        verbose=1,
+                        callbacks=[callback_89_89])
 
-    model.load_weights(join(results_dir_weights, 'model_2_11_acc_0.919_val_acc_0.899.h5'))
-    dataDir = 'C:\work_dir\meteorData\extra_data_filtered_30'
-    problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problematicData_40_1.txt')
-    getProblematicMeteors(model, dataDir, ImageResolution, problematicFile, margin=0.40)
+    #model.load_weights(join(results_dir_weights, 'model_2_09_acc_0.917_val_acc_0.882.h5'))
+    #dataDir = 'C:\work_dir\meteorData\extra_data_filtered_30'
+    #problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problematicData_40_1.txt')
+    #getProblematicMeteors(model, dataDir, ImageResolution, problematicFile, margin=0.40)
 
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
     # Get performance measures:
-    #getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
+    getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
 
     # Plot Accuracy and Loss in both train and validation sets
-    #plotAccuracyAndLoss(history)
+    plotAccuracyAndLoss(history)
 
     #########################################################################################################################
 

@@ -113,21 +113,27 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
 
     problematicPositives: int = 0
     problematicNegatives: int = 0
+    totalError: float = 0.0
 
     with open(problematicMeteorsFile, 'w') as problematicFile:
         for i in range(len(prob_predicted)):
-            if(prob_predicted[i] <= (0.5 - margin) and labels[i] == 1.0):
-                problematicFile.write('meteors_{}\n'.format(i))
-                problematicPositives += 1
-            elif(prob_predicted[i] >= (0.5 + margin) and labels[i] == 0.0):
-                problematicFile.write('non_meteors_{}\n'.format(i))
-                problematicNegatives += 1
+            if (labels[i] == 1.0):
+                totalError += labels[i] - prob_predicted[i]
+                if(prob_predicted[i] <= (0.5 - margin)):
+                    problematicFile.write('meteors_{}\n'.format(i))
+                    problematicPositives += 1
+            else:
+                totalError += prob_predicted[i]
+                if(prob_predicted[i] >= (0.5 + margin)):
+                    problematicFile.write('non_meteors_{}\n'.format(i))
+                    problematicNegatives += 1
 
-
+    relativeError: float = totalError / len(prob_predicted)
     print('\n\n\n\n*********************************************')
     print('Margin: {}'.format(margin))
     print('Problematic meteors: {}'.format(problematicPositives))
     print('Problematic non-meteors: {}'.format(problematicNegatives))
+    print('Relative error: {}'.format(relativeError))
     print('*********************************************\n\n\n\n')
 
     # Margin: 0.3
@@ -152,6 +158,10 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
 
     #############################################################################################
 
+    # Margin: 0.4
+    # Problematic meteors: 1200
+    # Problematic non-meteors: 561
+    # Relative error: [0.13366854]
 
 
 
