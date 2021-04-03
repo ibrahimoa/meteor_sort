@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_09/performance_model_2_09.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_09/results_2_09_code.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/problematicData_35.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/problematicData_40.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/problematicData_45.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filter_missclassified_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_10/performance_model_2_10.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_10/results_2_10_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_30.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/problematicData_48.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compareTxtToFolders.py" beforeDir="false" afterPath="$PROJECT_DIR$/compareTxtToFolders.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/split_train_valid_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/split_train_valid_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,17 +46,17 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_09" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_10" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_10" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_09" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_08" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_07" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_06" />
-      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_05" />
     </key>
   </component>
   <component name="RunManager" selected="Python.cnnTraining_2">
@@ -100,6 +102,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="filter_missclassified_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorClassificationProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/filter_missclassified_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="performanceMeasure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -113,27 +136,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/performanceMeasure.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="predict_generator_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MeteorClassificationProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/predict_generator_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,10 +168,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.cnnTraining_2" />
-        <item itemvalue="Python.performanceMeasure" />
         <item itemvalue="Python.split_train_valid_test" />
+        <item itemvalue="Python.filter_missclassified_data" />
+        <item itemvalue="Python.performanceMeasure" />
         <item itemvalue="Python.cnnTraining" />
-        <item itemvalue="Python.predict_generator_test" />
       </list>
     </recent_temporary>
   </component>

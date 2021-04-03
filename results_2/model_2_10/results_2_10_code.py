@@ -12,7 +12,7 @@ def trainCNN( ):
 
     tf.keras.backend.clear_session()
 
-    modelNumber = 'model_2_11'
+    modelNumber = 'model_2_10'
     base_dir = 'C:\work_dir\meteorData\extraData_filtered_30_split_70_30'
     results_dir = join('G:\GIEyA\TFG\meteor_classification\\results_2', modelNumber)
     results_dir_weights = join(results_dir, 'weights')
@@ -23,7 +23,7 @@ def trainCNN( ):
     ImageResolution: tuple = (432, 432)
     ImageResolutionGrayScale: tuple = (432, 432, 1)
     DROPOUT: float = 0.30
-    EPOCHS: int = 15
+    EPOCHS: int = 50
     LEARNING_RATE: float = 5e-4
 
     # Training -> 62483 (3905x16)
@@ -60,37 +60,29 @@ def trainCNN( ):
     # model 2.11 -> Very complex CNN (???) -> ??? parameters. Training time: ???
 
     model = tf.keras.models.Sequential([
-        Conv2D(16, (7, 7), activation='elu', input_shape=ImageResolutionGrayScale, strides=1),
-        Conv2D(16, (7, 7), activation='elu', kernel_initializer='he_uniform'),
+        Conv2D(32, (7, 7), activation='elu', input_shape=ImageResolutionGrayScale, strides=1),
+        MaxPooling2D(pool_size=(3, 3)),
+        Dropout(DROPOUT),
+
+        Conv2D(32, (5, 5), activation='elu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(DROPOUT),
 
-        Conv2D(12, (5, 5), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(24, (5, 5), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(12, (5, 5), activation='elu', kernel_initializer='he_uniform'),
-        MaxPooling2D(pool_size=(2, 2)),
-        Dropout(DROPOUT),
 
-        Conv2D(12, (5, 5), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(24, (5, 5), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(12, (5, 5), activation='elu', kernel_initializer='he_uniform'),
+        Conv2D(16, (3, 3), activation='elu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(DROPOUT),
 
         Conv2D(16, (3, 3), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(24, (3, 3), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(16, (3, 3), activation='elu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(DROPOUT),
 
-        Conv2D(24, (3, 3), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(32, (3, 3), activation='elu', kernel_initializer='he_uniform'),
-        Conv2D(24, (3, 3), activation='elu', kernel_initializer='he_uniform'),
+        Conv2D(8, (3, 3), activation='elu', kernel_initializer='he_uniform'),
         MaxPooling2D(pool_size=(2, 2)),
         Dropout(DROPOUT),
 
         Flatten(),
-        Dense(864, activation='elu', kernel_initializer='he_uniform'),
+        Dense(288, activation='elu', kernel_initializer='he_uniform'),
         Dropout(DROPOUT),
         Dense(16, activation='elu', kernel_initializer='he_uniform'),
         Dropout(DROPOUT - 0.10),
@@ -114,8 +106,6 @@ def trainCNN( ):
                 model.save_weights(join(results_dir_weights, modelNumber + '_acc_' +  str(logs.get('accuracy'))[0:5]
                                         + '_val_acc_' + str(logs.get('val_accuracy'))[0:5] + '.h5'), save_format='h5')
 
-    #model.load_weights(join('G:\GIEyA\TFG\meteor_classification\\results_2\model_2_02\weights',
-    #                        'model_2_02_acc_0.9049_val_acc_0.8934.h5'))
     callback_88_88 = SaveModelCallback(0.880, 0.880)
 
     history = model.fit(train_generator,
@@ -127,10 +117,10 @@ def trainCNN( ):
                         verbose=1,
                         callbacks=[callback_88_88])
 
-    #model.load_weights(join(results_dir_weights, 'model_2_09_acc_0.917_val_acc_0.882.h5'))
-    #dataDir = 'C:\work_dir\meteorData\extra_data_filtered_30'
-    #problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problematicData_40_1.txt')
-    #getProblematicMeteors(model, dataDir, ImageResolution, problematicFile, margin=0.40)
+    #     model.load_weights(join(results_dir_weights, 'model_2_09_acc_0.917_val_acc_0.882.h5'))
+    #     dataDir = 'C:\work_dir\meteorData\extra_data'
+    #     problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problematicData_48.txt')
+    #     getProblematicMeteors(model, dataDir, ImageResolution, problematicFile, margin=0.48)
 
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 

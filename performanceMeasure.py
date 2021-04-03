@@ -130,10 +130,14 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
     print('Problematic non-meteors: {}'.format(problematicNegatives))
     print('*********************************************\n\n\n\n')
 
+    # Margin: 0.3
+    # Problematic meteors: 2729
+    # Problematic non-meteors: 1263
+
     # Margin: 0.35
     # Problematic meteors: 2410
     # Problematic non-meteors: 969
-    
+
     # Margin: 0.4
     # Problematic meteors: 2016
     # Problematic non-meteors: 650
@@ -142,6 +146,16 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
     # Problematic meteors: 1344
     # Problematic non-meteors: 326
 
+    # Margin: 0.48
+    # Problematic meteors: 730
+    # Problematic non-meteors: 134
+
     #############################################################################################
+
+
+
+
+
+
     return
 

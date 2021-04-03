@@ -21,36 +21,42 @@ def split_data(SOURCE, TRAINING, VALIDATION, TESTING, SPLIT_TRAIN, SPLIT_VALID, 
         print('Split sum must de 1')
         return
     contentList = os.listdir(SOURCE)
-    for i in range(len(contentList)):
-        if os.path.getsize(os.path.join(SOURCE, contentList[i])) == 0:
-            contentList.pop(i)
+#     for i in range(len(contentList)):
+    #         if os.path.getsize(os.path.join(SOURCE, contentList[i])) == 0:
+    #             contentList.pop(i)
     random.sample(contentList, len(contentList))
     for i in range(int(SPLIT_TRAIN * len(contentList))):
+        if(i % 300 == 0):
+            print(i)
         try:
             copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(TRAINING, contentList[i]))
         except:
             pass
     for i in range(int(SPLIT_TRAIN * len(contentList)), int((SPLIT_TRAIN + SPLIT_VALID) * len(contentList))):
+        if(i % 300 == 0):
+            print(i)
         try:
             copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(VALIDATION, contentList[i]))
         except:
             pass
     for i in range(int((SPLIT_TRAIN + SPLIT_VALID) * len(contentList)), len(contentList)):
+        if(i % 300 == 0):
+            print(i)
         try:
             copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(TESTING, contentList[i]))
         except:
             pass
 
-METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData_75_15_10\meteors"
-NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extraData_75_15_10\\non_meteors"
+METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data_filtered_30\meteors"
+NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data_filtered_30\\non_meteors"
 
-TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\train\meteors"
-VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\validation\meteors"
-TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData_70_30\\test\meteors'
+TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\train\meteors"
+VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\validation\meteors"
+TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\test\meteors'
 
-TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\train\\non_meteors"
-VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_70_30\\validation\\non_meteors"
-TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData_70_30\\test\\non_meteors'
+TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\train\\non_meteors"
+VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\validation\\non_meteors"
+TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\test\\non_meteors'
 
 if __name__ == "__main__":
     split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.70, 0.30, 0.00)

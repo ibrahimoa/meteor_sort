@@ -9,6 +9,7 @@ def detectionsFileToList(path):
             list.append(line)
     f.close()
     return list
+
 def checkListExclusion(list1, list2):
     return list(set(list1).intersection(list2))
 
