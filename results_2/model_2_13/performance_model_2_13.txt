@@ -1,0 +1,13 @@
+*********************************************
+confusion matrix: 
+true positives: 8578
+false positives: 842
+true negatives: 13436
+false negatives: 3924
+*********************************************
+*********************************************
+Performance metrics: 
+Model Precision: 0.910615711252654
+Model Recall: 0.6861302191649337
+Model F1 Score: 0.7825928291214306
+*********************************************
