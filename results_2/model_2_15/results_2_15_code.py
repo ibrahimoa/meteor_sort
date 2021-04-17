@@ -14,7 +14,7 @@ from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss, getP
 def trainCNN():
     tf.keras.backend.clear_session()
 
-    modelNumber = 'model_2_16'
+    modelNumber = 'model_2_15'
     base_dir = 'C:\work_dir\meteorData\extraData_70_30'  # We don't use filtered data ... Not so useful
     results_dir = join('G:\GIEyA\TFG\meteor_classification\\results_2', modelNumber)
     results_dir_weights = join(results_dir, 'weights')
@@ -65,18 +65,20 @@ def trainCNN():
     # new model 2.12 -> BatchNormalization + kernel_regularizer
     # model 2.13 -> BatchNormalization + unit_norm()
     # model 2.14 -> Make it simpler in order to avoid overfitting
-    # model 2.15 -> Simpler and smaller input size
-    # model 2.16 -> Simpler
 
     model = tf.keras.models.Sequential([
 
-        Conv2D(8, (7, 7), activation='elu', input_shape=ImageResolutionGrayScale,
+        Conv2D(16, (7, 7), activation='elu', input_shape=ImageResolutionGrayScale,
                strides=1, kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
         #Conv2D(24, (7, 7), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
         MaxPooling2D(pool_size=(2, 2)),
         BatchNormalization(),
 
-        Conv2D(12, (5, 5), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
+        Conv2D(24, (5, 5), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
+        MaxPooling2D(pool_size=(2, 2)),
+        BatchNormalization(),
+
+        Conv2D(24, (5, 5), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
         MaxPooling2D(pool_size=(2, 2)),
         BatchNormalization(),
 
@@ -84,11 +86,7 @@ def trainCNN():
         MaxPooling2D(pool_size=(2, 2)),
         BatchNormalization(),
 
-        Conv2D(16, (2, 2), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
-        MaxPooling2D(pool_size=(2, 2)),
-        BatchNormalization(),
-
-        Conv2D(8, (2, 2), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
+        Conv2D(8, (3, 3), activation='elu', kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
         MaxPooling2D(pool_size=(2, 2)),
         BatchNormalization(),
 
