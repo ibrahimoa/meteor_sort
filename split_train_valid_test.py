@@ -47,17 +47,17 @@ def split_data(SOURCE, TRAINING, VALIDATION, TESTING, SPLIT_TRAIN, SPLIT_VALID, 
         except:
             pass
 
-METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data_filtered_30\meteors"
-NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data_filtered_30\\non_meteors"
+METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data\meteors"
+NON_METEORS_SOURCE_DIR = "C:\work_dir\meteorData\extra_data\\non_meteors"
 
-TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\train\meteors"
-VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\validation\meteors"
-TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\test\meteors'
+TRAIN_METEORS_DIR = "C:\work_dir\meteorData\extraData_85_15\\train\meteors"
+VALIDATION_METEORS_DIR = "C:\work_dir\meteorData\extraData_85_15\\validation\meteors"
+TEST_METEORS_DIR = 'C:\work_dir\meteorData\extraData_85_15\\test\meteors'
 
-TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\train\\non_meteors"
-VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\validation\\non_meteors"
-TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData_filtered_30_split_70_30\\test\\non_meteors'
+TRAIN_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_85_15\\train\\non_meteors"
+VALIDATION_NON_METEORS_DIR = "C:\work_dir\meteorData\extraData_85_15\\validation\\non_meteors"
+TEST_NON_METEORS_DIR = 'C:\work_dir\meteorData\extraData_85_15\\test\\non_meteors'
 
 if __name__ == "__main__":
-    split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.70, 0.30, 0.00)
-    split_data(NON_METEORS_SOURCE_DIR, TRAIN_NON_METEORS_DIR, VALIDATION_NON_METEORS_DIR, TEST_NON_METEORS_DIR, 0.70, 0.30, 0.00)
+    split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.85, 0.15, 0.00)
+    split_data(NON_METEORS_SOURCE_DIR, TRAIN_NON_METEORS_DIR, VALIDATION_NON_METEORS_DIR, TEST_NON_METEORS_DIR, 0.85, 0.15, 0.00)
