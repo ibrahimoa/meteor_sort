@@ -4,9 +4,12 @@ from tensorflow.keras.optimizers import *
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+from os.path import join
+
 
 def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, threshold=0.5) -> None:
-    validation_datagen = ImageDataGenerator(rescale=1.0/255.)
+    validation_datagen = ImageDataGenerator(rescale=1.0 / 255.)
 
     validation_generator = validation_datagen.flow_from_directory(dataDir,
                                                                   batch_size=1,
@@ -29,13 +32,13 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     falseNegatives: int = 0
 
     for i in range(len(prob_predicted)):
-        if(prob_predicted[i] >= threshold and validation_labels[i] == 1.0):
+        if (prob_predicted[i] >= threshold and validation_labels[i] == 1.0):
             truePositives += 1
-        elif(prob_predicted[i] >= threshold and validation_labels[i] == 0.0):
+        elif (prob_predicted[i] >= threshold and validation_labels[i] == 0.0):
             falsePositives += 1
-        elif(validation_labels[i] == 0.0):
+        elif (validation_labels[i] == 0.0):
             trueNegatives += 1
-        elif(validation_labels[i] == 1.0):
+        elif (validation_labels[i] == 1.0):
             falseNegatives += 1
 
     try:
@@ -62,7 +65,6 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
         performanceFile.write('false negatives: {}\n'.format(falseNegatives))
         performanceFile.write('*********************************************\n')
 
-
         performanceFile.write('*********************************************\n')
         performanceFile.write('Performance metrics: \n')
         performanceFile.write('Model Precision: {}\n'.format(modelPrecision))
@@ -73,36 +75,38 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     #############################################################################################
     return
 
-def plotAccuracyAndLoss(history) -> None:
 
-    acc      = history.history['accuracy']
-    val_acc  = history.history['val_accuracy']
-    loss     = history.history['loss']
+def plotAccuracyAndLoss(history, results_dir: str, model_number: str) -> None:
+    acc = history.history['accuracy']
+    val_acc = history.history['val_accuracy']
+    loss = history.history['loss']
     val_loss = history.history['val_loss']
-    epochs = range(len(acc)) #Get number of epochs
+    epochs = range(len(acc))  # Get number of epochs
 
     plt.plot(epochs, acc)
     plt.plot(epochs, val_acc)
     plt.title('Meteor detection training and validation accuracy')
+    plt.savefig(join(results_dir, 'results' + model_number + '_acc'))
 
     plt.figure()
     plt.plot(epochs, loss)
     plt.plot(epochs, val_loss)
     plt.title('Meteor detection training and validation loss')
-
+    plt.savefig(join(results_dir, 'results' + model_number + '_loss'))
     plt.show()
 
     return
 
+
 def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFile, margin=0.40) -> None:
-    datagen = ImageDataGenerator(rescale=1.0/255.)
+    datagen = ImageDataGenerator(rescale=1.0 / 255.)
 
     generator = datagen.flow_from_directory(dataDir,
-                                          batch_size=1,
-                                          class_mode='binary',
-                                          color_mode='grayscale',
-                                          target_size=ImageResolution,
-                                          shuffle=False)
+                                            batch_size=1,
+                                            class_mode='binary',
+                                            color_mode='grayscale',
+                                            target_size=ImageResolution,
+                                            shuffle=False)
     prob_predicted = model.predict(generator, steps=len(generator.filenames))
     labels = []
 
@@ -119,12 +123,12 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
         for i in range(len(prob_predicted)):
             if (labels[i] == 1.0):
                 totalError += labels[i] - prob_predicted[i]
-                if(prob_predicted[i] <= (0.5 - margin)):
+                if (prob_predicted[i] <= (0.5 - margin)):
                     problematicFile.write('meteors_{}\n'.format(i))
                     problematicPositives += 1
             else:
                 totalError += prob_predicted[i]
-                if(prob_predicted[i] >= (0.5 + margin)):
+                if (prob_predicted[i] >= (0.5 + margin)):
                     problematicFile.write('non_meteors_{}\n'.format(i))
                     problematicNegatives += 1
 
@@ -163,9 +167,4 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
     # Problematic non-meteors: 561
     # Relative error: [0.13366854]
 
-
-
-
-
     return
-
