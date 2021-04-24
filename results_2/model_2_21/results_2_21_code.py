@@ -144,25 +144,23 @@ def trainCNN():
 
     callback_92_92 = SaveModelCallback(0.92, 0.92)
 
-    # history = model.fit(train_generator,
-    #                    validation_data=validation_generator,
-    #                    steps_per_epoch=steps_per_epoch,
-    #                    epochs=EPOCHS,
-    #                    validation_steps=validation_steps,
-    #                    shuffle=True,
-    #                    verbose=2,
-    #                    callbacks=[callback_92_92])
+    history = model.fit(train_generator,
+                        validation_data=validation_generator,
+                        steps_per_epoch=steps_per_epoch,
+                        epochs=EPOCHS,
+                        validation_steps=validation_steps,
+                        shuffle=True,
+                        verbose=2,
+                        callbacks=[callback_92_92])
 
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
-    # Load best model weights:
-    model.load_weights(join(results_dir_weights, 'model_2_21_acc_0.944_val_acc_0.939.h5'))
     # Get performance measures:
-    getPerformanceMeasures(model, train_dir, ImageResolution,
-                           join(results_dir, 'best_model_training_data_performance_' + modelNumber + '.txt'), threshold=0.50)
+    getPerformanceMeasures(model, validation_dir, ImageResolution,
+                           join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
 
     # Plot Accuracy and Loss in both train and validation sets
-    # plotAccuracyAndLoss(history, results_dir, modelNumber[-5:])
+    plotAccuracyAndLoss(history, results_dir, modelNumber[-5:])
 
     #########################################################################################################################
 

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_20/performance_model_2_20.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_20/results_2_20_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/best_model_performance_model_2_21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/best_model_training_data_performance_model_2_21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/performance_model_2_21.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/results_2_21_code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
@@ -41,20 +43,20 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_20" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_21" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_21" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_20" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_19" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_18" />
       <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_17" />
-      <recent name="G:\GIEyA\TFG\meteor_classification\results_2\model_2_16" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.fits_file_1,py">
+  <component name="RunManager" selected="Python.cnnTraining_2">
     <configuration name="cnnTraining_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,8 +164,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.fits_file_1,py" />
         <item itemvalue="Python.cnnTraining_2" />
+        <item itemvalue="Python.fits_file_1,py" />
         <item itemvalue="Python.split_train_valid_test" />
         <item itemvalue="Python.filter_missclassified_data" />
         <item itemvalue="Python.performanceMeasure" />

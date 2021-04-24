@@ -30,6 +30,7 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     trueNegatives: int = 0
     falsePositives: int = 0
     falseNegatives: int = 0
+    totalError: float = 0.0
 
     for i in range(len(prob_predicted)):
         if (prob_predicted[i] >= threshold and validation_labels[i] == 1.0):
@@ -40,7 +41,7 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
             trueNegatives += 1
         elif (validation_labels[i] == 1.0):
             falseNegatives += 1
-
+        totalError += abs(prob_predicted[i] - validation_labels[i])
     try:
         modelPrecision = (truePositives) / (truePositives + falsePositives)
     except:
@@ -56,6 +57,8 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
     except:
         modelF1score = 0
 
+    averageError: float = totalError / len(prob_predicted)
+
     with open(performanceFile, 'w') as performanceFile:
         performanceFile.write('*********************************************\n')
         performanceFile.write('confusion matrix: \n')
@@ -65,11 +68,15 @@ def getPerformanceMeasures(model, dataDir, ImageResolution, performanceFile, thr
         performanceFile.write('false negatives: {}\n'.format(falseNegatives))
         performanceFile.write('*********************************************\n')
 
-        performanceFile.write('*********************************************\n')
+        performanceFile.write('\n*********************************************\n')
         performanceFile.write('Performance metrics: \n')
         performanceFile.write('Model Precision: {}\n'.format(modelPrecision))
         performanceFile.write('Model Recall: {}\n'.format(modelRecall))
         performanceFile.write('Model F1 Score: {}\n'.format(modelF1score))
+        performanceFile.write('*********************************************\n')
+
+        performanceFile.write('\n*********************************************\n')
+        performanceFile.write('Model Average Error: {}\n'.format(averageError))
         performanceFile.write('*********************************************\n')
 
     #############################################################################################
@@ -85,13 +92,17 @@ def plotAccuracyAndLoss(history, results_dir: str, model_number: str) -> None:
 
     plt.plot(epochs, acc)
     plt.plot(epochs, val_acc)
-    plt.title('Meteor detection training and validation accuracy')
+    plt.title('Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
+    plt.xlabel('Iteraciones')
+    plt.ylabel('Precisión')
     plt.savefig(join(results_dir, 'results' + model_number + '_acc'))
 
     plt.figure()
     plt.plot(epochs, loss)
     plt.plot(epochs, val_loss)
-    plt.title('Meteor detection training and validation loss')
+    plt.title('Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
+    plt.xlabel('Iteraciones')
+    plt.ylabel('Error')
     plt.savefig(join(results_dir, 'results' + model_number + '_loss'))
     plt.show()
 
