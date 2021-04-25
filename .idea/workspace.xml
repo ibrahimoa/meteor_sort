@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/best_model_performance_model_2_21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/best_model_training_data_performance_model_2_21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/performance_model_2_21.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results_2/model_2_21/results_2_21_code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
