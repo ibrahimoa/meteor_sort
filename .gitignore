@@ -130,6 +130,6 @@ dmypy.json
 
 # Data
 *.jpg
-*.png
+#*.png
 *.7z
-*.h5
+#*.h5
