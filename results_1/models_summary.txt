@@ -217,7 +217,7 @@ model 18:
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 150
     modelo: conv(16, 11x11), conv(12, 7x7), conv(12, 5x5),
             conv(12, 3x3), 480, 16, 1
@@ -229,7 +229,7 @@ model 19: train, valid, test
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 150
     modelo: conv(16, 11x11), conv(12, 7x7), conv(12, 5x5),
             conv(12, 3x3), 480, 16, 1
@@ -241,7 +241,7 @@ model 20: train, valid, test
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 25
     modelo: conv(16, 5x5), conv(12, 3x3), conv(12, 2x2),
             conv(12, 2x2), 588, 16, 1
@@ -253,7 +253,7 @@ model 21: train, valid, test
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 50
     modelo: conv(8, 11x11), conv(16, 7x7), conv(16, 3x3),
             conv(24, 3x3), conv(24, 3x3), 1320, 512, 1
@@ -265,7 +265,7 @@ model 22: train, valid, test
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 120
     modelo: conv(16, 11x11), conv(16, 7x7), conv(12, 5x5),
             conv(8, 3x3), 840, 32, 1
@@ -277,9 +277,345 @@ model 23: train, valid, test
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25-0.30-0.20) x 5 (last layers: 24-drop-8-drop-1)
+    regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 25
     modelo: conv(16, 9x9), conv(16, 1x1), conv(16, 7x7), 
             conv(12, 1x1), conv(12, 5x5), conv(12, 1x1),
             conv(12, 3x3), conv(24, 1x1), conv(24, 3x3),
             384, 16, 1
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+model 2.1: train, valid
+    resolución: 640x360
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: relu
+    regularizacion: Dropout(0.25-0.30-0.20)
+    iteraciones: 10
+    modelo: conv(16, 11x11), conv(12, 7x7), conv(12, 5x5), 
+            conv(12, 3x3), 480, 16, 1
+-----------------------------------------------------------------------
+model 2.2: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: relu
+    regularizacion: Dropout(0.25-0.30-0.20)
+    iteraciones: 15
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(16, 3x3), conv(24, 3x3), conv(16, 3x3),
+            conv(24, 3x3), conv(32, 3x3), conv(24, 3x3),
+            864, 16, 1
+-----------------------------------------------------------------------
+model 2.3: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.25-0.30-0.20)
+    iteraciones: 15
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(16, 3x3), conv(24, 3x3), conv(16, 3x3),
+            conv(24, 3x3), conv(32, 3x3), conv(24, 3x3),
+            864, 16, 1
+-----------------------------------------------------------------------
+model 2.4: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.25-0.30-0.20)
+    iteraciones: 100
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(16, 5x5), conv(16, 5x5),
+            conv(24, 3x3), conv(24, 3x3),
+            conv(32, 2x2), conv(32, 2x2),
+            conv(24, 2x2), conv(24, 2x2),
+            conv(32, 2x2),
+            512, 64, 1
+-----------------------------------------------------------------------
+model 2.5: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.25-0.30-0.20)
+    iteraciones: 150
+    modelo: conv(12, 7x7), 
+            conv(16, 5x5), conv(16, 5x5),
+            conv(24, 3x3), conv(24, 3x3),
+            conv(32, 2x2), conv(32, 2x2),
+            conv(16, 2x2), conv(16, 2x2),
+            conv(16, 2x2), conv(16, 2x2),
+            256, 32, 1
+-----------------------------------------------------------------------
+model 2.6: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: -
+    iteraciones: 15
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(16, 3x3), conv(24, 3x3), conv(16, 3x3),
+            conv(24, 3x3), conv(32, 3x3), conv(24, 3x3),
+            864, 16, 1 
+-----------------------------------------------------------------------
+model 2.7: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.40-0.40-0.30)
+    iteraciones: 15
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(16, 3x3), conv(24, 3x3), conv(16, 3x3),
+            conv(24, 3x3), conv(32, 3x3), conv(24, 3x3),
+            864, 16, 1
+-----------------------------------------------------------------------
+model 2.8: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.50-0.50-0.30)
+    iteraciones: 15
+    modelo: conv(16, 7x7), conv(16, 7x7), 
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(12, 5x5), conv(24, 5x5), conv(12, 5x5),
+            conv(16, 3x3), conv(24, 3x3), conv(16, 3x3),
+            conv(24, 3x3), conv(32, 3x3), conv(24, 3x3),
+            864, 16, 1
+-----------------------------------------------------------------------
+model 2.9: train, valid
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.30-0.30-0.20)
+    iteraciones: 60
+    modelo: conv(32, 7x7),
+            conv(32, 5x5),
+            conv(16, 3x3),
+            conv(16, 3x3),
+            conv(8, 3x3),
+            288, 16, 1
+-----------------------------------------------------------------------
+model 2.10: train, valid. 2.9 With filtered data (To know if the data was wrong ...)
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: Dropout(0.30-0.30-0.20)
+    iteraciones: 50
+    modelo: conv(32, 7x7),
+            conv(32, 5x5),
+            conv(16, 3x3),
+            conv(16, 3x3),
+            conv(8, 3x3),
+            288, 16, 1
+-----------------------------------------------------------------------
+model 2.11: train, valid.
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: BatchNormalization
+    iteraciones: 15
+    modelo: conv(12, 7x7), conv(16, 7x7), 
+            conv(16, 5x5), conv(24, 5x5),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(24, 2x2), conv(32, 2x2),
+            288, 16, 1
+-----------------------------------------------------------------------
+model 2.12: train, valid.
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: kernel_regularizer=l2(l=0.01) + kernel_constraint=unit_norm + BatchNormalization -> Not so useful. BatchNormalization + kernel_regularizer this time. 
+    iteraciones: 15
+    modelo: conv(12, 7x7), conv(16, 7x7), 
+            conv(16, 5x5), conv(24, 5x5),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(24, 2x2), conv(32, 2x2),
+            288, 16, 1
+-----------------------------------------------------------------------
+model 2.13: train, valid.
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 15
+    modelo: conv(12, 7x7), conv(16, 7x7), 
+            conv(16, 5x5), conv(24, 5x5),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(16, 3x3), conv(24, 3x3),
+            conv(24, 2x2), conv(32, 2x2),
+            288, 16, 1
+-----------------------------------------------------------------------
+model 2.14: train, valid. Simpler
+    resolución: 432x432
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 15
+    modelo: conv(24, 7x7), conv(16, 7x7), 
+            conv(16, 5x5), 
+            conv(24, 5x5),
+            conv(24, 3x3),
+            conv(16, 3x3),
+            conv(16, 2x2), conv(8, 2x2),
+            128, 8, 1
+-----------------------------------------------------------------------
+model 2.15: train, valid. Simpler and smaller input size.
+    resolución: 300x300
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 15
+    modelo: conv(16, 7x7), 
+            conv(24, 5x5), 
+            conv(24, 5x5),
+            conv(16, 3x3),
+            conv(8, 3x3),
+            288, 8, 1
+-----------------------------------------------------------------------
+model 2.16: train, valid. Simpler.
+    resolución: 300x300
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 30
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(16, 3x3),
+            conv(12, 3x3),
+            conv(4, 2x2),
+            196, 8, 1
+-----------------------------------------------------------------------
+model 2.17: train, valid. Smaller input size.
+    resolución: 256x256
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 70-30
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 75
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(16, 3x3),
+            conv(12, 3x3),
+            conv(4, 2x2),
+            144, 8, 1
+-----------------------------------------------------------------------
+model 2.18: train, valid. Smaller input size.
+    resolución: 256x256
+    datos: lote=16,16, train, valid = 62.5, 26.8
+    división: 85-15
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 75
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(12, 3x3),
+            conv(8, 3x3),
+            200, 16, 1
+-----------------------------------------------------------------------
+model 2.19: train, valid. Data Augmentation.
+    resolución: 256x256
+    datos: aumentación, lote=16,16, train, valid = 62.5, 26.8
+    división: 85-15
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 75
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(12, 3x3),
+            conv(8, 3x3),
+            200, 16, 1
+-----------------------------------------------------------------------
+model 2.20: train, valid. +Data Augmentation (vertical and horizontal flip).
+    resolución: 256x256
+    datos: aumentación, lote=64,64, train, valid = 62.5, 26.8
+    división: 85-15
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 25
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(12, 3x3),
+            conv(8, 3x3),
+            200, 16, 1
+-----------------------------------------------------------------------
+model 2.21: train, valid. +iteraciones.
+    resolución: 256x256
+    datos: aumentación, lote=64,64, train, valid = 62.5, 26.8
+    división: 85-15
+    optim & lr: Adam, 0.0005
+    init: he_uniform
+    activacion: elu
+    regularizacion: unit_norm() + BatchNormalization 
+    iteraciones: 200
+    modelo: conv(8, 7x7), 
+            conv(12, 5x5), 
+            conv(12, 3x3),
+            conv(8, 3x3),
+            200, 16, 1
