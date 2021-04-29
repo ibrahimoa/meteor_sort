@@ -95,6 +95,7 @@ def plotAccuracyAndLoss(history, results_dir: str, model_number: str) -> None:
     plt.title('Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
     plt.xlabel('Iteraciones')
     plt.ylabel('Precisión')
+    plt.legend(['Entrenamiento', 'Validación'])
     plt.savefig(join(results_dir, 'results' + model_number + '_acc'))
 
     plt.figure()
@@ -103,6 +104,7 @@ def plotAccuracyAndLoss(history, results_dir: str, model_number: str) -> None:
     plt.title('Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
     plt.xlabel('Iteraciones')
     plt.ylabel('Error')
+    plt.legend(['Entrenamiento', 'Validación'])
     plt.savefig(join(results_dir, 'results' + model_number + '_loss'))
     plt.show()
 
@@ -179,3 +181,112 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
     # Relative error: [0.13366854]
 
     return
+
+
+def plotExample() -> None:
+    acc = [0.195, 0.192, 0.17, 0.17, 0.17, 0.18, 0.18, 0.19, 0.19, 0.199]
+    val_acc = [0.17, 0.17, 0.16, 0.14, 0.13, 0.11, 0.10, 0.11, 0.13, 0.10]
+    loss = [0.13, 0.14, 0.14, 0.13, 0.14, 0.13, 0.12, 0.11, 0.12, 0.11]
+    val_loss = [0.12, 0.12, 0.11, 0.13, 0.14, 0.13, 0.18, 0.19, 0.19, 0.19]
+    epochs = range(10)
+
+    plt.plot(epochs, acc)
+    plt.plot(epochs, val_acc)
+    plt.title('Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
+    plt.xlabel('Iteraciones')
+    plt.ylabel('Precisión')
+    plt.legend(['Entrenamiento', 'Validación'])
+
+    plt.figure()
+    plt.plot(epochs, loss)
+    plt.plot(epochs, val_loss)
+    plt.title('Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
+    plt.xlabel('Iteraciones')
+    plt.ylabel('Error')
+    plt.legend(['Entrenamiento', 'Validación'])
+    plt.show()
+
+    return
+
+
+def editImages(do=0):
+    from PIL import Image
+    import numpy as np
+    import os
+
+    boxTitle = (40, 33, 615, 55)
+    boxX = (285, 455, 365, 475)
+    boxY = (18, 215, 32, 280)
+    boxLegend = (85, 372, 245, 425)
+
+    ref = Image.open('reference_acc.png').convert('RGB')
+    regionTitle = ref.crop(boxTitle)
+    regionX = ref.crop(boxX)
+    regionY = ref.crop(boxY)
+    regioLegend = ref.crop(boxLegend)
+
+    # ref_arr = np.array(ref)
+    # ref_arr[33 : 55, 40 : 615] = (100, 0, 0)
+    # ref_arr[455: 475, 285: 365] = (100, 0, 0)
+    # ref_arr[215: 280, 18: 32] = (100, 0, 0)
+    # ref_arr[375: 425, 85: 245] = (0, 0, 128)
+    # ref = Image.fromarray(ref_arr)
+    # ref.show()
+
+    if (do):
+        for root, dirs, files in os.walk('./graphics'):
+            for file in files:
+                if (file.endswith('acc.png')):
+                    dst = Image.open('./graphics/' + file).convert('RGB')
+                    dst_arr = np.array(dst)
+                    dst_arr[33: 55, 40: 615] = (255, 255, 255)
+                    dst = Image.fromarray(dst_arr)
+                    dst.paste(regionTitle, boxTitle)
+                    dst.paste(regionX, boxX)
+                    dst.paste(regionY, boxY)
+                    dst.paste(regioLegend, boxLegend)
+                    dst.save('./graphics_corrected/' + file)
+
+    ##################################################################################
+
+    boxTitle = (40, 33, 615, 55)
+    boxX = (285, 455, 365, 475)
+    boxY = (18, 215, 32, 280)
+    boxLegend = (413, 62, 571, 413)
+    boxLegendLoss = (85, 62, 245, 116)
+    # 372: 425, 85: 245 acc
+    # 62: 116, 413: 571 loss
+    # 62: 116, 85: 245
+
+    ref = Image.open('reference_loss.png').convert('RGB')
+    regionTitle = ref.crop(boxTitle)
+    regionX = ref.crop(boxX)
+    regionY = ref.crop(boxY)
+    regioLegend = ref.crop(boxLegendLoss)
+
+    # ref_arr = np.array(ref)
+    # ref_arr[33 : 55, 40 : 615] = (100, 0, 0)
+    # ref_arr[455: 475, 285: 365] = (100, 0, 0)
+    # ref_arr[215: 280, 18: 32] = (100, 0, 0)
+    # ref_arr[62: 116, 413: 571] = (0, 0, 128)
+    # ref = Image.fromarray(ref_arr)
+    # ref.show()
+
+    if (do):
+        for root, dirs, files in os.walk('./graphics'):
+            for file in files:
+                if (file.endswith('loss.png')):
+                    dst = Image.open('./graphics/' + file).convert('RGB')
+                    dst_arr = np.array(dst)
+                    dst_arr[33: 55, 40: 615] = (255, 255, 255)
+                    dst = Image.fromarray(dst_arr)
+                    dst.paste(regionTitle, boxTitle)
+                    dst.paste(regionX, boxX)
+                    dst.paste(regionY, boxY)
+                    dst.paste(regioLegend, boxLegendLoss)
+                    dst.save('./graphics_corrected/' + file)
+
+
+if __name__ == "__main__":
+    plotExample()
+    # editImages(1)

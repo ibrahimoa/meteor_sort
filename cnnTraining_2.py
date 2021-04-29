@@ -9,7 +9,7 @@ import multiprocessing
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.constraints import unit_norm
 from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss, getProblematicMeteors
-
+from tensorflow import lite
 
 def trainCNN():
     tf.keras.backend.clear_session()
@@ -137,7 +137,12 @@ def trainCNN():
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
     # Load best model weights:
-    #model.load_weights(join(results_dir_weights, 'model_2_21_acc_0.944_val_acc_0.939.h5'))
+    model.load_weights(join(results_dir, 'model_2_21_acc_0.944_val_acc_0.939.h5'))
+
+    # Convert model to tflite:.
+    converter = lite.TFLiteConverter.from_keras_model(model)
+    tflite_model = converter.convert()
+    open("meteorLiteModel.tflite", "wb").write(tflite_model)
 
     # Get performance measures:
     getPerformanceMeasures(model, train_dir, ImageResolution,
