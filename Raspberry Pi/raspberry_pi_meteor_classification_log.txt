@@ -1,0 +1,18 @@
+Total files classified: 13390
+True positives: 5880
+False positives: 435
+True negatives: 6704
+False negatives: 371
+
+##################################
+
+Precision: 94.76
+Recall  : 93.91
+F1 score : 0.943
+
+##################################
+
+Total time = 750.18 s
+Total classificaiton time = 571.11 s
+Average time : 56.03 ms
+Average classificaiton time : 42.65 ms
