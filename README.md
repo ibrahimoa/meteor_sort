@@ -1,5 +1,4 @@
-# Meteor classification using Neural
-Networks
+# Meteor classification using Neural Networks
 ###### Author: Ibrahim Oulad Amar
 Final degree project which consists of creating a meteor classification system using Deep Learning techniques.
 
