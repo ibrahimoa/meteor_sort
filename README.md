@@ -4,7 +4,7 @@ Final degree project which consists of creating a meteor classification system u
 
 The classifier uses 256x256 images as input. The images shall be the MAXPIXEL ones in the FTP format. In this case I used the data provided by the University of Western Ontario. I am grateful to researcher Denis Vida for his help in obtaining these data.
 
-The data was splitted in two sets, training (85%) and validation (15%). The model is a CNN + MaxPool + BatchNormalization (total 9 layers) along with 3 fully connected layers. The total number of parameters is 49,449, of which 512 are not-trainable. The model performance metrics are:
+The data was splitted in two sets, training (85%) and validation (15%). The model is a CNN + MaxPool + BatchNormalization (total 12 layers) along with 3 fully connected layers. The total number of parameters is 49,449, of which 512 are not-trainable. The model performance metrics are:
 
 - Model Precision: 0.931 (93.1%)
 - Model Recall: 0.941 (94.1%)
