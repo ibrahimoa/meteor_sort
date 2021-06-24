@@ -133,3 +133,5 @@ dmypy.json
 #*.png
 *.7z
 #*.h5
+Plots_no_title/
+*.pptx
