@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+.idea/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -26,6 +27,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -130,9 +132,6 @@ dmypy.json
 
 # Data
 *.jpg
-#*.png
 *.7z
-#*.h5
-Plots_no_title/
 *.pptx
 meteorData/
