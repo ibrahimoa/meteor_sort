@@ -134,4 +134,5 @@ dmypy.json
 *.jpg
 *.7z
 *.pptx
+*.xml
 meteorData/
