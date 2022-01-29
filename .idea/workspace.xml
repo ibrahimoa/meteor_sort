@@ -2,104 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="579471f4-8068-4a49-b409-53a5155d89c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/elu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_01_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_01_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_02_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_02_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_03_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/model_2_03_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_10_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_10_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_11_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_11_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_12_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_12_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_13_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_13_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_14_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_14_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_15_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_15_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_16_10_layers_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_16_10_layers_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_17_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_17_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_18_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_18_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_19_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_19_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_20_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_20_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_21_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_21_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_22_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_22_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_23_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_23_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_04_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_04_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_05_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_05_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_06_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_06_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_07_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_07_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_08_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_08_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_09_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_09_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_10_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_10_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_11_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_11_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_12_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_12_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_13_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_13_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_14_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_14_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_15_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_15_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_16_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_16_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_17_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_17_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_18_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_18_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_19_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_19_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_20_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_20_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_21_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_21_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_2_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_3_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_3_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_5_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_5_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_6_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_6_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_7_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_7_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_8_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_8_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_9_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/results_9_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphics_corrected/scheduling_lr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/meteorLiteModel.tflite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/printActivationFunctions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reference_acc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reference_loss.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sigmoid.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cnnLearningRate.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnLearningRate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_16_10_layers_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_16_10_layers_acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_16_10_layers_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_16_10_layers_loss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_2_16_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_2_16_acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_2_16_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_2_16_loss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_2_17_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_2_17_acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plots/results_2_17_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/Plots/results_2_17_loss.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cnnTraining_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/cnnTraining_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics/results_2_07_acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphics/results_2_07_acc.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics/results_2_07_loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/graphics/results_2_07_loss.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" afterPath="$PROJECT_DIR$/performanceMeasure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/models_summary.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/models_summary.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_2/model_2_07/results_2_07_acc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_2/model_2_07/results_2_07_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/results/results_2/model_2_07/results_2_07_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/results_2/model_2_07/results_2_07_loss.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +51,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/results_2/model_2_21" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -148,27 +63,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.cnnTraining_2">
-    <configuration name="cnnLearningRate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MeteorClassificationProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cnnLearningRate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="cnnTraining_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fits_file_1,py" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="draw_convnet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorClassificationProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -198,11 +92,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Python programs/cupy_example" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Auxiliar" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Python programs/cupy_example/fits_file_1,py.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Auxiliar/draw_convnet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,13 +147,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="results_2_07_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorClassificationProject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Results/results_2/model_2_07" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Results/results_2/model_2_07/results_2_07_code.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.cnnTraining_2" />
+      <item itemvalue="Python.draw_convnet" />
+      <item itemvalue="Python.performanceMeasure" />
+      <item itemvalue="Python.printActivationFunctions" />
+      <item itemvalue="Python.results_2_07_code" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.cnnTraining_2" />
-        <item itemvalue="Python.printActivationFunctions" />
-        <item itemvalue="Python.cnnLearningRate" />
+        <item itemvalue="Python.results_2_07_code" />
         <item itemvalue="Python.performanceMeasure" />
-        <item itemvalue="Python.fits_file_1,py" />
+        <item itemvalue="Python.draw_convnet" />
+        <item itemvalue="Python.printActivationFunctions" />
       </list>
     </recent_temporary>
   </component>

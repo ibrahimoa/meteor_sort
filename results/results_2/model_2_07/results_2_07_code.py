@@ -124,10 +124,10 @@ def trainCNN( ):
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
     # Get performance measures:
-    getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
+    # getPerformanceMeasures(model, validation_dir, ImageResolution, join(results_dir, 'performance_' + modelNumber + '.txt'), threshold=0.50)
 
     # Plot Accuracy and Loss in both train and validation sets
-    plotAccuracyAndLoss(history)
+    plotAccuracyAndLoss(history, results_dir, modelNumber)
 
     #########################################################################################################################
 

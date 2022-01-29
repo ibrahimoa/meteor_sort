@@ -1,15 +1,4 @@
-model 1:
-    resolución: 300x300
-    datos: aumentación datos, lote=8,4, train, valid = 48, 6
-    división: 89-11
-    optim & lr: RMSprop, 0.001
-    init: glorot_uniform (default)
-    activacion: relu
-    regularizacion: -
-    iteraciones: 10
-    modelo: conv(16, 3x3), conv(32, 3x3), conv(64, 2x2), 1024, 1
------------------------------------------------------------------------
-model 2:
+model 2: (1)
     resolución: 300x300
     datos: aumentación datos, lote=8,4, train, valid = 48, 12
     división: 80-20
@@ -20,7 +9,7 @@ model 2:
     iteraciones: 20
     modelo: conv(32, 3x3), conv(64, 3x3), 64, 16, 1
 -----------------------------------------------------------------------
-model 3:
+model 3: (2)
     resolución: 300x300
     datos: aumentación datos, lote=8,4, train, valid = 48, 12
     división: 80-20
@@ -31,18 +20,7 @@ model 3:
     iteraciones: 20
     modelo: conv(32, 3x3), conv(64, 3x3), conv(64, 3x3), 64, 16, 4, 1
 -----------------------------------------------------------------------
-model 4:
-    resolución: 300x300
-    datos: aumentación datos, lote=8,4, train, valid = 48, 12
-    división: 80-20
-    optim & lr: RMSprop, 0.001
-    init: glorot_uniform (default)
-    activacion: relu
-    regularizacion: Dropout(0.2) x 3
-    iteraciones: 20
-    modelo: conv(32, 3x3), conv(64, 3x3), conv(64, 3x3), 64, 16, 4, 1
------------------------------------------------------------------------
-model 5:
+model 5: (3)
     resolución: 300x300
     datos: aumentación datos, lote=8,4, train, valid = 48, 12
     división: 80-20
@@ -51,9 +29,9 @@ model 5:
     activacion: relu
     regularizacion: Dropout(0.2) x 2
     iteraciones: 20
-    modelo: conv(16, 3x3), conv(64, 3x3), conv(64, 3x3), 128, 16, 4, 1
+    modelo: conv(16, 3x3), conv(64, 3x3), 128, 16, 4, 1
 -----------------------------------------------------------------------
-model 6:
+model 6: (4)
     resolución: 640x360
     datos: aumentación datos, lote=24,24, train, valid = 29.6, 7.4
     división: 80-20
@@ -65,7 +43,7 @@ model 6:
     modelo: conv(32, 2x2), conv(32, 2x2), conv(16, 2x2), conv(16, 2x2),
             conv(12, 2x2), conv(12, 2x2), 432, 64, 8, 1
 -----------------------------------------------------------------------
-model 7:
+model 7: (no se considera)
     resolución: 640x360
     datos: aumentación datos, lote=32,32, train, valid = 39.5, 9.9
     división: 80-20
@@ -78,7 +56,7 @@ model 7:
             conv(12, 2x2), conv(8, 2x2), conv(8, 2x2), 
             288, 64, 8, 1
 -----------------------------------------------------------------------
-model 8:
+model 8: (no se considera)
     resolución: 640x360
     datos: aumentación datos, lote=32,32, train, valid = 39.5, 9.9
     división: 80-20
@@ -106,7 +84,7 @@ model 9:
             conv(4, 2x2), conv(4, 2x2),
             48, 24, 12, 1
 -----------------------------------------------------------------------
-model 10:
+model 10: (no se considera)
     resolución: 480x480
     datos: aumentación datos, lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -132,7 +110,7 @@ model 11:
             conv(12, 2x2), conv(12, 2x2), conv(8, 2x2),
             conv(4, 2x2), 100, 32, 8, 1
 -----------------------------------------------------------------------
-model 12:
+model 12: (no se considera)
     resolución: 480x480
     datos: aumentación datos, lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -145,7 +123,7 @@ model 12:
             conv(12, 2x2), conv(8, 2x2), conv(4, 2x2),
             144, 32, 8, 1
 -----------------------------------------------------------------------
-model 13:
+model 13: (no se considera)
     resolución: 480x480
     datos: aumentación datos, lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -158,7 +136,7 @@ model 13:
             conv(12, 2x2), conv(8, 2x2), conv(4, 2x2),
             144, 32, 8, 1
 -----------------------------------------------------------------------
-model 14:
+model 14: (no se considera)
     resolución: 480x480
     datos: aumentación datos, lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -173,16 +151,16 @@ model 14:
 -----------------------------------------------------------------------
 model 15:
     resolución: 480x480
-    datos: lote=8,8, train, valid = 39.5, 9.9
+    datos: aumentación datos, lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
     optim & lr: Adam, 0.004
     init: he_uniform
     activacion: relu
-    regularizacion: Dropout(0.25) x 2
+    regularizacion: -
     iteraciones: 100
-    modelo: conv(64, 5x5), conv(32, 3x3), conv(32, 3x3),
-            conv(16, 3x3), conv(16, 2x2), conv(8, 2x2),
-            288, 8, 1
+    modelo: conv(32, 3x3), conv(16, 3x3), conv(16, 3x3),
+            conv(12, 2x2), conv(8, 2x2), conv(4, 2x2),
+            144, 32, 8, 1
 -----------------------------------------------------------------------
 model 16:
     resolución: 480x480
@@ -197,7 +175,7 @@ model 16:
             conv(16, 3x3), conv(16, 3x3), conv(8, 3x3),
             conv(8, 3x3), 24, 8, 1
 -----------------------------------------------------------------------
-model 17:
+model 17: (no se considera)
     resolución: 640x360
     datos: lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -210,7 +188,7 @@ model 17:
             conv(16, 3x3), conv(16, 3x3), conv(8, 3x3),
             conv(8, 3x3), 24, 8, 1
 -----------------------------------------------------------------------
-model 18:
+model 18: (no se considera: mismo que el 19)
     resolución: 640x360
     datos: lote=16,16, train, valid = 39.5, 9.9
     división: 80-20
@@ -270,7 +248,7 @@ model 22: train, valid, test
     modelo: conv(16, 11x11), conv(16, 7x7), conv(12, 5x5),
             conv(8, 3x3), 840, 32, 1
 -----------------------------------------------------------------------
-model 23: train, valid, test
+model 23: train, valid, test -> Convoluciones anidadas
     resolución: 480x480
     datos: lote=16,16, train, valid = 66.9, 13.4
     división: 80-20
@@ -284,7 +262,16 @@ model 23: train, valid, test
             conv(12, 3x3), conv(24, 1x1), conv(24, 3x3),
             384, 16, 1
 -----------------------------------------------------------------------
------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 -----------------------------------------------------------------------
 model 2.1: train, valid
     resolución: 640x360
@@ -304,7 +291,7 @@ model 2.2: train, valid
     división: 70-30
     optim & lr: Adam, 0.0005
     init: he_uniform
-    activacion: relu
+    activacion: elu
     regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 15
     modelo: conv(16, 7x7), conv(16, 7x7), 
@@ -320,7 +307,7 @@ model 2.3: train, valid
     división: 70-30
     optim & lr: Adam, 0.0005
     init: he_uniform
-    activacion: elu
+    activacion: relu
     regularizacion: Dropout(0.25-0.30-0.20)
     iteraciones: 15
     modelo: conv(16, 7x7), conv(16, 7x7), 
@@ -468,7 +455,7 @@ model 2.12: train, valid.
     optim & lr: Adam, 0.0005
     init: he_uniform
     activacion: elu
-    regularizacion: kernel_regularizer=l2(l=0.01) + kernel_constraint=unit_norm + BatchNormalization -> Not so useful. BatchNormalization + kernel_regularizer this time. 
+    regularizacion: BatchNormalization + kernel_regularizer this time. 
     iteraciones: 15
     modelo: conv(12, 7x7), conv(16, 7x7), 
             conv(16, 5x5), conv(24, 5x5),

@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "python.linting.pylintEnabled": false,
+        "python.linting.pydocstyleEnabled": true,
+        "python.linting.mypyEnabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+            "--ignore=E203,W503,E501",
+            "--max-line-length=90"
+        ],
+        "python.linting.pydocstyleArgs": [
+            "--ignore=D203,D212,D202,D410,D411,D412,D413,D407,D105,D107",
+        ],
+        "python.linting.enabled": true,
+        "python.pythonPath": "python.exe",
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+            "--line-length",
+            "90"
+        ],
+        "[python]": {
+            "editor.tabSize": 4
+        },
+    },
+}

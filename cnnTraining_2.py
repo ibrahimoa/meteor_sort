@@ -11,6 +11,7 @@ from tensorflow.keras.constraints import unit_norm
 from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss, getProblematicMeteors
 from tensorflow import lite
 
+
 def trainCNN():
     tf.keras.backend.clear_session()
 
@@ -112,6 +113,7 @@ def trainCNN():
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
+
     class SaveModelCallback(Callback):
         def __init__(self, thresholdTrain, thresholdValid):
             super(SaveModelCallback, self).__init__()
@@ -126,13 +128,13 @@ def trainCNN():
     callback_92_92 = SaveModelCallback(0.92, 0.92)
 
     history = model.fit(train_generator,
-                       validation_data=validation_generator,
-                       steps_per_epoch=steps_per_epoch,
-                       epochs=EPOCHS,
-                       validation_steps=validation_steps,
-                       shuffle=True,
-                       verbose=2,
-                       callbacks=[callback_92_92])
+                        validation_data=validation_generator,
+                        steps_per_epoch=steps_per_epoch,
+                        epochs=EPOCHS,
+                        validation_steps=validation_steps,
+                        shuffle=True,
+                        verbose=2,
+                        callbacks=[callback_92_92])
 
     ################################# PRINT MODEL PERFORMANCE AND GET PERFORMANCE MEASURES  #################################
 
