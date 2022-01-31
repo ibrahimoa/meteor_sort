@@ -5,7 +5,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import Callback
 from os.path import join
 from os import listdir, getcwd
-from pathlib import Path
 import multiprocessing
 from tensorflow.keras.constraints import unit_norm
 from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss

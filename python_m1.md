@@ -45,6 +45,7 @@ deactivate
 * matplotlib-inline       0.1.2
 * numpy                   1.19.5
 * pandas                  1.4.0.dev0+354.g9ed9a659eb
+* scipy                   1.7.3
 * tensorboard             2.5.0
 * tensorboard-data-server 0.6.1
 * tensorboard-plugin-wit  1.8.0
