@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epochs, steps_per_epoch):
     tf.keras.backend.clear_session()
 
-    tf.keras.backend.clear_session()
-
     # Rescale all images by 1./255
 
     train_datagen = ImageDataGenerator(rescale=1.0 / 255)

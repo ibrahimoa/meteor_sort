@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-.idea/
+#.idea/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -134,5 +134,5 @@ dmypy.json
 *.jpg
 *.7z
 *.pptx
-*.xml
+#*.xml
 meteorData/
