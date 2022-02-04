@@ -5,6 +5,7 @@ from pathlib import Path
 from os import getcwd
 from os.path import join
 
+
 # a SOURCE directory containing the files
 # a TRAINING directory that a portion of the files will be copied to
 # a TESTING directory that a portion of the files will be copie to

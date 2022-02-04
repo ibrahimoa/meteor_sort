@@ -1,10 +1,6 @@
-import tensorflow as tf
-from tensorflow.keras.layers import *
-from tensorflow.keras.optimizers import *
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 from os.path import join
 
 
@@ -92,19 +88,19 @@ def plotAccuracyAndLoss(history, results_dir: str, model_number: str) -> None:
 
     plt.plot(epochs, acc)
     plt.plot(epochs, val_acc)
-    # plt.title('Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
-    plt.xlabel('Iteraciones')
-    plt.ylabel('Precisión')
-    plt.legend(['Entrenamiento', 'Validación'])
+    plt.title('Meteor detection training and validation Accuracy')
+    plt.xlabel('Iterations')
+    plt.ylabel('Accuracy')
+    plt.legend(['Training', 'Validation'])
     plt.savefig(join(results_dir, 'results_' + model_number + '_acc'))
 
     plt.figure()
     plt.plot(epochs, loss)
     plt.plot(epochs, val_loss)
-    # plt.title('Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
-    plt.xlabel('Iteraciones')
-    plt.ylabel('Error')
-    plt.legend(['Entrenamiento', 'Validación'])
+    plt.title('Meteor detection training and validation Loss')
+    plt.xlabel('Iterations')
+    plt.ylabel('Loss')
+    plt.legend(['Training', 'Validation'])
     plt.savefig(join(results_dir, 'results_' + model_number + '_loss'))
     plt.show()
 
@@ -134,14 +130,14 @@ def getProblematicMeteors(model, dataDir, ImageResolution, problematicMeteorsFil
 
     with open(problematicMeteorsFile, 'w') as problematicFile:
         for i in range(len(prob_predicted)):
-            if (labels[i] == 1.0):
+            if labels[i] == 1.0:
                 totalError += labels[i] - prob_predicted[i]
-                if (prob_predicted[i] <= (0.5 - margin)):
+                if prob_predicted[i] <= (0.5 - margin):
                     problematicFile.write('meteors_{}\n'.format(i))
                     problematicPositives += 1
             else:
                 totalError += prob_predicted[i]
-                if (prob_predicted[i] >= (0.5 + margin)):
+                if prob_predicted[i] >= (0.5 + margin):
                     problematicFile.write('non_meteors_{}\n'.format(i))
                     problematicNegatives += 1
 
@@ -192,7 +188,8 @@ def plotExample() -> None:
 
     plt.plot(epochs, acc)
     plt.plot(epochs, val_acc)
-    plt.title('Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
+    plt.title(
+        'Precisión de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation accuracy
     plt.xlabel('Iteraciones')
     plt.ylabel('Precisión')
     plt.legend(['Entrenamiento', 'Validación'])
@@ -200,7 +197,8 @@ def plotExample() -> None:
     plt.figure()
     plt.plot(epochs, loss)
     plt.plot(epochs, val_loss)
-    plt.title('Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
+    plt.title(
+        'Error de validación y entrenamiento en la detección de meteoros')  # Meteor detection training and validation loss
     plt.xlabel('Iteraciones')
     plt.ylabel('Error')
     plt.legend(['Entrenamiento', 'Validación'])

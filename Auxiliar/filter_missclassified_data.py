@@ -9,20 +9,22 @@ problematicFile = join('G:\GIEyA\TFG\meteor_classification\\results_2', 'problem
 DST_MET = 'C:\work_dir\meteorData\extra_data_filtered_30\meteors'
 DST_NON_MET = 'C:\work_dir\meteorData\extra_data_filtered_30\\non_meteors'
 
+
 def FileToList(path):
     list = []
     with open(path, 'r') as f:
         for line in [line.rstrip('\n') for line in f]:
-                list.append(line + '.jpg')
+            list.append(line + '.jpg')
     return list
+
 
 def moveWithFilter(SRC, DST, FILTER):
     contentList = os.listdir(SRC)
-#     for i in range(len(contentList)):
+    #     for i in range(len(contentList)):
     #         if os.path.getsize(os.path.join(SRC, contentList[i])) == 0:
     #             contentList.pop(i)
     for i in range(len(contentList)):
-        if(i % 100 == 0):
+        if (i % 100 == 0):
             print(i)
         try:
             if contentList[i] not in FILTER:
@@ -31,6 +33,7 @@ def moveWithFilter(SRC, DST, FILTER):
                 FILTER.pop(contentList[i])
         except:
             pass
+
 
 # Problematic meteors: 2016
 # Problematic non-meteors: 650

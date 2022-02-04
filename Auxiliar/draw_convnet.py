@@ -24,10 +24,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
     POSSIBILITY OF SUCH DAMAGE.
 """
 
-
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+
 plt.rcdefaults()
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
@@ -97,22 +97,17 @@ def add_layer_with_omission(patches, colors, size=(24, 24),
 
 def add_mapping(patches, colors, start_ratio, end_ratio, patch_size, ind_bgn,
                 top_left_list, loc_diff_list, num_show_list, size_list):
-
     start_loc = top_left_list[ind_bgn] \
-        + (num_show_list[ind_bgn] - 1) * np.array(loc_diff_list[ind_bgn]) \
-        + np.array([start_ratio[0] * (size_list[ind_bgn][1] - patch_size[1]),
-                    - start_ratio[1] * (size_list[ind_bgn][0] - patch_size[0])]
-                   )
-
-
-
+                + (num_show_list[ind_bgn] - 1) * np.array(loc_diff_list[ind_bgn]) \
+                + np.array([start_ratio[0] * (size_list[ind_bgn][1] - patch_size[1]),
+                            - start_ratio[1] * (size_list[ind_bgn][0] - patch_size[0])]
+                           )
 
     end_loc = top_left_list[ind_bgn + 1] \
-        + (num_show_list[ind_bgn + 1] - 1) * np.array(
-            loc_diff_list[ind_bgn + 1]) \
-        + np.array([end_ratio[0] * size_list[ind_bgn + 1][1],
-                    - end_ratio[1] * size_list[ind_bgn + 1][0]])
-
+              + (num_show_list[ind_bgn + 1] - 1) * np.array(
+        loc_diff_list[ind_bgn + 1]) \
+              + np.array([end_ratio[0] * size_list[ind_bgn + 1][1],
+                          - end_ratio[1] * size_list[ind_bgn + 1][0]])
 
     patches.append(Rectangle(start_loc, patch_size[1], -patch_size[0]))
     colors.append(Dark)
@@ -128,7 +123,6 @@ def add_mapping(patches, colors, start_ratio, end_ratio, patch_size, ind_bgn,
     patches.append(Line2D([start_loc[0] + patch_size[1], end_loc[0]],
                           [start_loc[1] - patch_size[0], end_loc[1]]))
     colors.append(Darker)
-
 
 
 def label(xy, text, xy_off=[0, 4]):
@@ -147,7 +141,6 @@ if __name__ == '__main__':
 
     fig, ax = plt.subplots()
 
-
     ############################
     # conv layers
     size_list = [(256, 256), (250, 250), (83, 83), (79, 79), (26, 26), (24, 24), (12, 12), (10, 10), (5, 5)]
@@ -160,7 +153,7 @@ if __name__ == '__main__':
     num_show_list = list(map(min, num_list, [NumConvMax] * len(num_list)))
     top_left_list = np.c_[np.cumsum(x_diff_list), np.zeros(len(x_diff_list))]
 
-    for ind in range(len(size_list)-1,-1,-1):
+    for ind in range(len(size_list) - 1, -1, -1):
         if flag_omit:
             add_layer_with_omission(patches, colors, size=size_list[ind],
                                     num=num_list[ind],
@@ -191,8 +184,7 @@ if __name__ == '__main__':
             top_left_list, loc_diff_list, num_show_list, size_list)
         label(top_left_list[ind], text_list[ind] + '\n{}x{} kernel'.format(
             patch_size_list[ind][0], patch_size_list[ind][1]), xy_off=[26, -65]
-        )
-
+              )
 
     ############################
     # fully connected layers

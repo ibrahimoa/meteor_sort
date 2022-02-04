@@ -15,7 +15,6 @@ def elu_func(x, a):
     return np.where(x > 0, x, a * (np.exp(x) - 1))
 
 
-
 x = np.linspace(-6, 6, 200)
 sig = sigmoid(x)
 relu = relu_function(x)

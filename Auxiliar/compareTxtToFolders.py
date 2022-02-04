@@ -1,6 +1,7 @@
 import os
 from os.path import join
 
+
 def detectionsFileToList(path):
     list = []
     f = open(path, 'r')
@@ -10,8 +11,10 @@ def detectionsFileToList(path):
     f.close()
     return list
 
+
 def checkListExclusion(list1, list2):
     return list(set(list1).intersection(list2))
+
 
 folderDir = 'D:\MeteorDataBase\ServerData'
 tp = 'truePositivesMeteors.txt'
@@ -48,10 +51,10 @@ print(len(common_fp))
 meteorsList = []
 nonMeteorsList = []
 for element in tp_addL:
-    if(element not in tpL):
+    if (element not in tpL):
         meteorsList.append(element)
 for element in fp_addL:
-    if(element not in fpL):
+    if (element not in fpL):
         nonMeteorsList.append(element)
 
 meteors = open(join(folderDir, tp_all), 'w+')
@@ -66,5 +69,3 @@ print(len(tpL))
 print(len(fpL))
 print(len(meteorsList))
 print(len(nonMeteorsList))
-
-
