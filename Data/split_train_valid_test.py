@@ -6,63 +6,77 @@ from os import getcwd
 from os.path import join
 
 
-# a SOURCE directory containing the files
-# a TRAINING directory that a portion of the files will be copied to
-# a TESTING directory that a portion of the files will be copie to
-# a SPLIT SIZE to determine the portion
-# The files should also be randomized, so that the training set is a random
-# X% of the files, and the test set is the remaining files
-# SO, for example, if SOURCE is PetImages/Cat, and SPLIT SIZE is .9
-# Then 90% of the images in PetImages/Cat will be copied to the TRAINING dir
-# and 10% of the images will be copied to the TESTING dir
-# Also -- All images should be checked, and if they have a zero file length,
-# they will not be copied over
+def split_data(source_dir: str, training_dir: str, validation_dir: str, testing_dir: str, split_training: float,
+               split_validation: float, split_testing: float) -> None:
+    """
+    This function splits a given dataset into three sets: training, validation and testing.
 
-def split_data(SOURCE, TRAINING, VALIDATION, TESTING, SPLIT_TRAIN, SPLIT_VALID, SPLIT_TEST):
-    # YOUR CODE STARTS HERE
-    if SPLIT_TEST + SPLIT_TRAIN + SPLIT_VALID != 1:
-        print('Split sum must de 1')
-        return
-    contentList = os.listdir(SOURCE)
+    :param source_dir: the dataset directory path
+    :param training_dir: the training directory path
+    :param validation_dir: the validation directory path
+    :param testing_dir: the testing directory path
+    :param split_training: the training split
+    :param split_validation: the validation split
+    :param split_testing: the testing split
+    :return: None
 
-    random.sample(contentList, len(contentList))
-    for i in range(int(SPLIT_TRAIN * len(contentList))):
-        if i % 300 == 0:
-            print(i)
+    Note: the sum of the three arguments `split_training`, `split_validation` and `split_testing` has to be equal to 1.
+    """
+    # Check the values of 'split_training', 'split_validation' and 'split_testing'.
+    if split_training + split_validation + split_testing != 1:
+        raise ValueError("The sum of 'split_training', 'split_validation' and 'split_testing' arguments has to be "
+                         "equal to 1")
+    content_list = os.listdir(source_dir)
+
+    random.sample(content_list, len(content_list))
+
+    # Training set.
+    for i in range(int(split_training * len(content_list))):
         try:
-            copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(TRAINING, contentList[i]))
+            copyfile(os.path.join(source_dir, content_list[i]), os.path.join(training_dir, content_list[i]))
         except:
-            pass
-    for i in range(int(SPLIT_TRAIN * len(contentList)), int((SPLIT_TRAIN + SPLIT_VALID) * len(contentList))):
-        if i % 300 == 0:
-            print(i)
+            raise Exception(
+                "Couldn't copy the file '{}' into the location '{}'".format(os.path.join(source_dir, content_list[i]),
+                                                                            os.path.join(training_dir,
+                                                                                         content_list[i])))
+
+    # Validation set.
+    for i in range(int(split_training * len(content_list)),
+                   int((split_training + split_validation) * len(content_list))):
         try:
-            copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(VALIDATION, contentList[i]))
+            copyfile(os.path.join(source_dir, content_list[i]), os.path.join(validation_dir, content_list[i]))
         except:
-            pass
-    for i in range(int((SPLIT_TRAIN + SPLIT_VALID) * len(contentList)), len(contentList)):
-        if i % 300 == 0:
-            print(i)
+            raise Exception(
+                "Couldn't copy the file '{}' into the location '{}'".format(os.path.join(source_dir, content_list[i]),
+                                                                            os.path.join(validation_dir,
+                                                                                         content_list[i])))
+
+    # Testing set.
+    for i in range(int((split_training + split_validation) * len(content_list)), len(content_list)):
         try:
-            copyfile(os.path.join(SOURCE, contentList[i]), os.path.join(TESTING, contentList[i]))
+            copyfile(os.path.join(source_dir, content_list[i]), os.path.join(testing_dir, content_list[i]))
         except:
-            pass
+            raise Exception(
+                "Couldn't copy the file '{}' into the location '{}'".format(os.path.join(source_dir, content_list[i]),
+                                                                            os.path.join(testing_dir,
+                                                                                         content_list[i])))
 
 
-data_dir = join(Path(getcwd()).parent, "meteorData")
+data_dir = join(Path(getcwd()).parent, "meteor_data")
+meteors_source_dir = join(data_dir, "meteors")
+non_meteors_source_dir = join(data_dir, "non_meteors")
 
-METEORS_SOURCE_DIR = join(data_dir, "meteors")
-NON_METEORS_SOURCE_DIR = join(data_dir, "non_meteors")
+training_set_meteors_dir = join(data_dir, "train/meteors")
+validation_set_meteors_dir = join(data_dir, "validation/meteors")
+testing_set_meteors_dir = join(data_dir, "test/meteors")
 
-TRAIN_METEORS_DIR = join(data_dir, "train/meteors")
-VALIDATION_METEORS_DIR = join(data_dir, "validation/meteors")
-TEST_METEORS_DIR = join(data_dir, "test/meteors")
-
-TRAIN_NON_METEORS_DIR = join(data_dir, "train/non_meteors")
-VALIDATION_NON_METEORS_DIR = join(data_dir, "validation/non_meteors")
-TEST_NON_METEORS_DIR = join(data_dir, "test/non_meteors")
+training_set_non_meteors_dir = join(data_dir, "train/non_meteors")
+validation_set_non_meteors_dir = join(data_dir, "validation/non_meteors")
+testing_set_non_meteors_dir = join(data_dir, "test/non_meteors")
 
 if __name__ == "__main__":
-    split_data(METEORS_SOURCE_DIR, TRAIN_METEORS_DIR, VALIDATION_METEORS_DIR, TEST_METEORS_DIR, 0.85, 0.15, 0.00)
-    split_data(NON_METEORS_SOURCE_DIR, TRAIN_NON_METEORS_DIR, VALIDATION_NON_METEORS_DIR, TEST_NON_METEORS_DIR, 0.90,
+    split_data(meteors_source_dir, training_set_meteors_dir, validation_set_meteors_dir, testing_set_meteors_dir, 0.85,
+               0.15, 0.00)
+    split_data(non_meteors_source_dir, training_set_non_meteors_dir, validation_set_non_meteors_dir,
+               testing_set_non_meteors_dir, 0.90,
                0.10, 0.00)

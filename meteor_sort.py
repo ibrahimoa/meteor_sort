@@ -3,22 +3,38 @@ from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, BatchN
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import Callback
+from tensorflow.keras.models import Sequential
 from os.path import join
 from os import listdir, getcwd
 import multiprocessing
 from tensorflow.keras.constraints import unit_norm
-from performanceMeasure import getPerformanceMeasures, plotAccuracyAndLoss
+from auxiliar.meteor_sort_learning_rate import meteor_sort_learning_rate
+from auxiliar.performance_measure import get_performance_measures, plot_acc_and_loss
 from tensorflow import lite
-from meteorSortLearningRate import meteorSortLearningRate
 
 
 class MeteorSortCallback(Callback):
-    def __init__(self, threshold_train, threshold_valid, model, model_description, dir_weights):
+    """
+    Class to handle the `meteor_sort()` callbacks. This class is used to store the model weights if some conditions are
+    satisfied.
+    """
+
+    def __init__(self, threshold_train: float, threshold_valid: float, model: Sequential, model_description: str,
+                 weights_dir: str):
+        """
+        Constructor of the `MeteorSortCallback` class.
+
+        :param threshold_train: value of accuracy in training set from which we can save the model
+        :param threshold_valid: value of accuracy in validation set from which we can save the model
+        :param model: tensorflow.keras.models.Sequential model that is being trained
+        :param model_description: short model description
+        :param weights_dir: directory where to save the weights file
+        """
         super(MeteorSortCallback, self).__init__()
         self.thresholdTrain = threshold_train
         self.thresholdValid = threshold_valid
         self.model_description = model_description
-        self.dir_weights = dir_weights
+        self.dir_weights = weights_dir
         self.model = model
 
     def on_epoch_end(self, epoch, logs=None):
@@ -28,7 +44,19 @@ class MeteorSortCallback(Callback):
                      + '_val_acc_' + str(logs.get('val_accuracy'))[0:5] + '.h5'), save_format='h5')
 
 
-def meteorSort():
+def meteor_sort() -> None:
+    """
+    Meteor sort training main script. In this case we carry out the following tasks:
+        - Generate the training and validation generator.
+        - Create the tensorflow (keras) model.
+        - If enabled, run the `meteor_sort_learning_rate()` function.
+        - Train the model.
+        - If enabled, convert the model to tensorflow lite and run `get_performance_measures()` and
+        `plot_acc_and_loss()` methods to get the performance measures (precision, recall and F1-Score) and plot
+        the accuracy and loss over the training iterations in both the trainig and the validation sets.
+
+    :return: None
+    """
     tf.keras.backend.clear_session()
 
     # Data
@@ -85,7 +113,7 @@ def meteorSort():
                                                                   color_mode='grayscale',
                                                                   target_size=image_resolution)
 
-    model = tf.keras.models.Sequential([
+    model = Sequential([
 
         Conv2D(8, (7, 7), activation='elu', input_shape=image_resolution_gray_scale,
                strides=1, kernel_initializer='he_uniform', kernel_constraint=unit_norm()),
@@ -113,7 +141,7 @@ def meteorSort():
     ])
 
     if get_ideal_learning_rate:
-        meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epochs, steps_per_epoch)
+        meteor_sort_learning_rate(model, train_dir, image_resolution, batch_size, epochs, steps_per_epoch)
 
     print(model.summary())
     optimizer = Adam(learning_rate=learning_rate)
@@ -133,7 +161,7 @@ def meteorSort():
                         verbose=1,
                         callbacks=[callback_92_92])
 
-    # ------ Print model performance and get performance measures  ------
+    #  Print model performance and get performance measures
 
     if model_to_convert != "":
         # Load best model weights:
@@ -145,14 +173,14 @@ def meteorSort():
         open("meteorLiteModel.tflite", "wb").write(tflite_model)
 
         # Get performance measures:
-        getPerformanceMeasures(model, train_dir, image_resolution,
-                               join(results_dir, 'performance_' + model_name + '.txt'), threshold=0.50)
+        get_performance_measures(model, train_dir, image_resolution,
+                                 join(results_dir, 'performance_' + model_name + '.txt'), threshold=0.50)
 
         # Plot Accuracy and Loss in both train and validation sets
-        plotAccuracyAndLoss(history, results_dir, model_name[-5:])
+        plot_acc_and_loss(history, results_dir, model_name[-5:])
 
 
 if __name__ == '__main__':
-    p = multiprocessing.Process(target=meteorSort)
+    p = multiprocessing.Process(target=meteor_sort)
     p.start()
     p.join()

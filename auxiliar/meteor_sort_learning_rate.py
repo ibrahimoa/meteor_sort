@@ -2,16 +2,32 @@ from tensorflow.keras.callbacks import LearningRateScheduler
 import tensorflow as tf
 from tensorflow.keras.optimizers import Adam, RMSprop, SGD
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-import multiprocessing
+from tensorflow.keras.models import Sequential
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epochs, steps_per_epoch):
+def meteor_sort_learning_rate(model: Sequential, train_dir: str, image_resolution: (int, int), batch_size: int,
+                              epochs: int, steps_per_epoch: int) -> None:
+    """
+    Train the model given with three different optimizers:
+        - Adam
+        - RMSProp
+        - SGD
+
+    The learning rate goes from 1e-6 to 1e0 (1). Then plot the model training error (loss) with all three optimizers.
+
+    :param model: model for which to optimize the learning rate
+    :param train_dir: training directory
+    :param image_resolution: image resolution to be used
+    :param batch_size: batch size to be used in the training
+    :param epochs: number of epochs to use in the training (for now it has been built to use 60 epochs)
+    :param steps_per_epoch: the steps per epoch (defined also by the number of epochs and the batch_size parameters)
+    :return:
+    """
     tf.keras.backend.clear_session()
 
     # Rescale all images by 1./255
-
     train_datagen = ImageDataGenerator(rescale=1.0 / 255)
 
     train_generator = train_datagen.flow_from_directory(train_dir,
@@ -25,11 +41,11 @@ def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epoch
     lr_schedule = LearningRateScheduler(lambda epoch: 1e-6 * 10 ** (epoch / 10))
 
     # We are going to try different optimizers:
-    optimizer1 = Adam(lr=1e-6)
-    optimizer2 = RMSprop(lr=1e-6)
-    optimizer3 = SGD(lr=1e-6)
+    optimizer_1 = Adam(lr=1e-6)
+    optimizer_2 = RMSprop(lr=1e-6)
+    optimizer_3 = SGD(lr=1e-6)
 
-    model.compile(optimizer=optimizer1,
+    model.compile(optimizer=optimizer_1,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
@@ -40,7 +56,7 @@ def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epoch
                          verbose=1,
                          callbacks=[lr_schedule])
 
-    model.compile(optimizer=optimizer2,
+    model.compile(optimizer=optimizer_2,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
@@ -51,7 +67,7 @@ def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epoch
                          verbose=1,
                          callbacks=[lr_schedule])
 
-    model.compile(optimizer=optimizer3,
+    model.compile(optimizer=optimizer_3,
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
@@ -72,9 +88,3 @@ def meteorSortLearningRate(model, train_dir, image_resolution, batch_size, epoch
     plt.ylabel('Training set error')
     plt.legend(['Adam', 'RMSprop', 'SGD'])
     plt.show()
-
-
-if __name__ == '__main__':
-    p = multiprocessing.Process(target=meteorSortLearningRate)
-    p.start()
-    p.join()
