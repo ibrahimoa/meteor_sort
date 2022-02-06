@@ -31,8 +31,8 @@ class MeteorSortCallback(Callback):
         :param weights_dir: directory where to save the weights file
         """
         super(MeteorSortCallback, self).__init__()
-        self.thresholdTrain = threshold_train
-        self.thresholdValid = threshold_valid
+        self.threshold_train = threshold_train
+        self.threshold_valid = threshold_valid
         self.model_description = model_description
         self.dir_weights = weights_dir
         self.model = model
@@ -53,31 +53,31 @@ def meteor_sort() -> None:
         - Train the model.
         - If enabled, convert the model to tensorflow lite and run `get_performance_measures()` and
         `plot_acc_and_loss()` methods to get the performance measures (precision, recall and F1-Score) and plot
-        the accuracy and loss over the training iterations in both the trainig and the validation sets.
+        the accuracy and loss over the training iterations in both the training and the validation sets.
 
     :return: None
     """
     tf.keras.backend.clear_session()
 
     # Data
-    data_dir = join(getcwd(), "meteorData")
+    data_dir = join(getcwd(), "meteor_data")
     train_dir = join(data_dir, 'train')
     validation_dir = join(data_dir, 'validation')
 
     # Model handling
     model_to_convert = ""
-    model_name = 'final_model'
-    results_dir = join('.\\Results', model_name)
+    model_name = 'model_v2_1'
+    results_dir = join(getcwd(), 'results')
     results_dir_weights = join(results_dir, 'weights')
 
     # Hyperparameters for the training
     image_resolution: tuple = (256, 256)
     image_resolution_gray_scale: tuple = (256, 256, 1)
-    epochs: int = 200
+    epochs: int = 10
     learning_rate: float = 5e-4
     get_ideal_learning_rate: bool = False
     train_set_threshold: float = 0.92
-    validation_set_threshold: float = 0.92
+    validation_set_threshold: float = 0.93
 
     num_training_images = len(listdir(join(train_dir, 'meteors'))) + len(listdir(join(train_dir, 'non_meteors')))
     num_validation_images = len(listdir(join(validation_dir, 'meteors'))) \
@@ -149,8 +149,8 @@ def meteor_sort() -> None:
                   loss='binary_crossentropy',
                   metrics=['accuracy'])
 
-    callback_92_92 = MeteorSortCallback(train_set_threshold, validation_set_threshold, model, model_name,
-                                        results_dir_weights)
+    my_callback = MeteorSortCallback(train_set_threshold, validation_set_threshold, model, model_name,
+                                     results_dir_weights)
 
     history = model.fit(train_generator,
                         validation_data=validation_generator,
@@ -159,12 +159,12 @@ def meteor_sort() -> None:
                         validation_steps=validation_steps,
                         shuffle=True,
                         verbose=1,
-                        callbacks=[callback_92_92])
+                        callbacks=[my_callback])
 
     #  Print model performance and get performance measures
 
     if model_to_convert != "":
-        # Load best model weights:
+        # Load model to convert weights:
         model.load_weights(join(results_dir, model_to_convert))
 
         # Convert model to tflite:
@@ -176,8 +176,8 @@ def meteor_sort() -> None:
         get_performance_measures(model, train_dir, image_resolution,
                                  join(results_dir, 'performance_' + model_name + '.txt'), threshold=0.50)
 
-        # Plot Accuracy and Loss in both train and validation sets
-        plot_acc_and_loss(history, results_dir, model_name[-5:])
+    # Plot Accuracy and Loss in both train and validation sets
+    plot_acc_and_loss(history, results_dir, model_name[-5:])
 
 
 if __name__ == '__main__':

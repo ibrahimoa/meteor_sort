@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a2fd45-c66e-474f-b912-51ef05f6f077" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/meteorSort.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/split_train_valid_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data/split_train_valid_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Raspberry Pi/meteorLiteModel.tflite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Raspberry Pi/raspberry_pi_meteor_classification_log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Raspberry Pi/runModelRaspi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auxiliar/performance_measure.py" beforeDir="false" afterPath="$PROJECT_DIR$/auxiliar/performance_measure.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteorSort.code-workspace" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteorSort.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteorSortLearningRate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/performanceMeasure.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_m1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/python_m1.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meteor_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/meteor_sort.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +28,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/meteor_sort.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Dev\meteor_sort\auxiliar" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="meteor_sort" type="PythonConfigurationType" factoryName="Python">
@@ -54,12 +47,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="F:\Dev\meteor_sort\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="meteor_sort.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/meteor_sort.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,7 +72,7 @@
       <updated>1644149065017</updated>
       <workItem from="1644149068008" duration="79000" />
       <workItem from="1644149812482" duration="321000" />
-      <workItem from="1644150150911" duration="2775000" />
+      <workItem from="1644150150911" duration="14115000" />
     </task>
     <servers />
   </component>
@@ -96,5 +89,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/meteor_sort$meteor_sort.coverage" NAME="meteor_sort Coverage Results" MODIFIED="1644180312011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
