@@ -26,7 +26,7 @@ def classify_image(interpreter, image, top_k=1):
 
 if __name__ == "__main__":
     # Load the model.
-    interpreter = Interpreter('meteorLiteModel.tflite')
+    interpreter = Interpreter('meteor_sort_tflite_model.tflite')
     print('log: model loaded successfully!')
 
     interpreter.allocate_tensors()

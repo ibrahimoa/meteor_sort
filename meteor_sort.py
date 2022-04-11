@@ -59,7 +59,7 @@ def meteor_sort() -> None:
     """
     tf.keras.backend.clear_session()
 
-    # Data
+    # data
     data_dir = join(getcwd(), "meteor_data")
     train_dir = join(data_dir, 'train')
     validation_dir = join(data_dir, 'validation')
@@ -73,16 +73,24 @@ def meteor_sort() -> None:
     # Hyperparameters for the training
     image_resolution: tuple = (256, 256)
     image_resolution_gray_scale: tuple = (256, 256, 1)
+    batch_size: int = 64
     epochs: int = 10
     learning_rate: float = 5e-4
     get_ideal_learning_rate: bool = False
     train_set_threshold: float = 0.92
     validation_set_threshold: float = 0.93
+    lightweight_training: bool = True
+    lightweight_training_factor: int = 4
 
     num_training_images = len(listdir(join(train_dir, 'meteors'))) + len(listdir(join(train_dir, 'non_meteors')))
     num_validation_images = len(listdir(join(validation_dir, 'meteors'))) \
                             + len(listdir(join(validation_dir, 'non_meteors')))
-    batch_size: int = 64
+
+    # Lightweight training (with fewer images)
+    if lightweight_training:
+        num_training_images = num_training_images / lightweight_training_factor
+        num_validation_images = num_validation_images / lightweight_training_factor
+
     steps_per_epoch: int = int(num_training_images / batch_size)
     validation_steps: int = int(num_validation_images / batch_size)
 
@@ -170,7 +178,7 @@ def meteor_sort() -> None:
         # Convert model to tflite:
         converter = lite.TFLiteConverter.from_keras_model(model)
         tflite_model = converter.convert()
-        open("meteorLiteModel.tflite", "wb").write(tflite_model)
+        open("meteor_sort_tflite_model.tflite", "wb").write(tflite_model)
 
         # Get performance measures:
         get_performance_measures(model, train_dir, image_resolution,

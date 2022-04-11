@@ -130,7 +130,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data
+# data
 *.jpg
 *.7z
 *.pptx

@@ -4,7 +4,10 @@
     <list default="true" id="f1a2fd45-c66e-474f-b912-51ef05f6f077" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raspberry_pi/runModelRaspi.py" beforeDir="false" afterPath="$PROJECT_DIR$/raspberry_pi/runModelRaspi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meteor_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/meteor_sort.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry_pi/meteorLiteModel.tflite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry_pi/raspberry_pi_meteor_classification_log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raspberry_pi/runModelRaspi.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/meteor_sort.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -91,8 +94,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/meteor_sort$meteor_sort.coverage" NAME="meteor_sort Coverage Results" MODIFIED="1644180312011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
