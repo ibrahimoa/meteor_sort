@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a2fd45-c66e-474f-b912-51ef05f6f077" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytorch_training" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteor_sort.py" beforeDir="false" afterPath="$PROJECT_DIR$/meteor_sort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raspberry_pi/meteorLiteModel.tflite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/raspberry_pi/raspberry_pi_meteor_classification_log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/raspberry_pi/runModelRaspi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/python_m1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/python_m1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +33,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

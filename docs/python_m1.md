@@ -36,8 +36,8 @@ deactivate
 * sklearn                  0.0
 * matplotlib               3.4.2
 * numpy                    1.19.5
-* torch                    1.8.1
-* torchvision              0.9.1
+* torch                    1.11.0
+* torchvision              0.12.0
 
 ### dev_3.8 (arm64) packages
 
@@ -52,3 +52,6 @@ deactivate
 * tensorflow-addons       0.1a3
 * tensorflow-estimator    2.5.0
 * tensorflow              0.1a3
+* torch                   1.12.0.dev20220518
+* torchaudio              0.11.0
+* torchvision             0.12.0
